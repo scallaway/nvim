@@ -85,17 +85,15 @@ require("packer").startup(function()
             require("configs.trouble")
         end,
     })
-    -- use({
-    --     "terrortylor/nvim-comment",
-    --     config = function()
-    --         require("configs.nvim-comment")
-    --     end,
-    -- })
     use({
         "numToStr/Comment.nvim",
         config = function()
             require("configs.comment")
         end,
+    })
+    -- Fix commenting in TS contexts (with embedded languages)
+    use({
+        "JoosepAlviste/nvim-ts-context-commentstring",
     })
 
     -- Git
@@ -130,5 +128,11 @@ require("packer").startup(function()
         config = function()
             require("configs.nvim-tree")
         end,
+    })
+
+    -- Code runing
+    use({
+        "michaelb/sniprun",
+        run = "bash install.sh",
     })
 end)
