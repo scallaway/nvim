@@ -34,7 +34,6 @@ local on_attach = function(client, bufnr)
     utils.buf_command(bufnr, "LspRef", vim.lsp.buf.references)
 
     -- bindings
-    utils.buf_map(bufnr, "n", "gi", ":LspRename<CR>")
     utils.buf_map(bufnr, "n", "K", ":LspHover<CR>")
     utils.buf_map(bufnr, "n", "[a", ":LspDiagPrev<CR>")
     utils.buf_map(bufnr, "n", "]a", ":LspDiagNext<CR>")

@@ -26,6 +26,7 @@ telescope.setup({
         },
         file_ignore_patterns = {
             "%.min.*",
+            "**/static/blog/*",
         },
     },
 })
