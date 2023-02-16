@@ -31,6 +31,7 @@ local on_attach = function(client, bufnr)
     utils.buf_command(bufnr, "LspSignatureHelp", vim.lsp.buf.signature_help)
     utils.buf_command(bufnr, "LspDef", vim.lsp.buf.definition)
     utils.buf_command(bufnr, "LspTypeDef", vim.lsp.buf.type_definition)
+    utils.buf_command(bufnr, "LspRef", vim.lsp.buf.references)
 
     -- bindings
     utils.buf_map(bufnr, "n", "gi", ":LspRename<CR>")
@@ -40,7 +41,7 @@ local on_attach = function(client, bufnr)
     utils.buf_map(bufnr, "n", "<Leader>a", ":LspDiagLine<CR>")
     utils.buf_map(bufnr, "i", "<C-x><C-x>", "<cmd> LspSignatureHelp<CR>")
 
-    utils.buf_map(bufnr, "n", "gy", ":LspRef<CR>")
+    utils.buf_map(bufnr, "n", "gr", ":LspRef<CR>")
     utils.buf_map(bufnr, "n", "gh", ":LspTypeDef<CR>")
     utils.buf_map(bufnr, "n", "gd", ":LspDef<CR>")
     utils.buf_map(bufnr, "n", "ga", ":LspAct<CR>")
