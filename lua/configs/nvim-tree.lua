@@ -6,7 +6,4 @@ end
 return nvim_tree.setup({
     auto_reload_on_write = true,
     disable_netrw = true,
-    update_focused_file = {
-        enable = false,
-    },
 })

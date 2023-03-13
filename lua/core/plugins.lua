@@ -77,6 +77,9 @@ require("packer").startup(function()
             require("configs.todo-comments")
         end,
     })
+    use({
+        "christoomey/vim-sort-motion",
+    })
     use("jose-elias-alvarez/typescript.nvim")
     use({
         "folke/trouble.nvim",
