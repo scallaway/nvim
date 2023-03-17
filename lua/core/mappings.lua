@@ -13,13 +13,8 @@ vim.keymap.set("n", "<C-f>", function()
 end)
 
 -- NVIM-TREE --
-vim.keymap.set("n", "<C-n>", function()
-    -- Use Ctrl-N to toggle the tree
-    require("nvim-tree").toggle()
-end)
-vim.keymap.set("n", "<leader>o", function()
-    require("nvim-tree").find_file()
-end)
+vim.keymap.set("n", "<C-n>", "<cmd>NvimTreeToggle<cr>")
+vim.keymap.set("n", "<leader>o", "<cmd>NvimTreeFindFile<cr>")
 
 -- TROUBLE --
 vim.keymap.set("n", "<C-e>", "<cmd>TroubleToggle document_diagnostics<cr>", { silent = true, noremap = true })
