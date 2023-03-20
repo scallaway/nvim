@@ -69,6 +69,7 @@ for _, server in ipairs({
     "rust",
     "docker",
     "clangd",
+    "bash",
 }) do
     require("configs.lsp." .. server).setup(on_attach, capabilities)
 end
