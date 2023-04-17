@@ -27,7 +27,12 @@ require("packer").startup(function()
     use("hrsh7th/cmp-nvim-lua")
     use("saadparwaiz1/cmp_luasnip")
     use("onsails/lspkind.nvim")
-    use("github/copilot.vim")
+    use({
+        "zbirenbaum/copilot.lua",
+        config = function()
+            require("configs.copilot")
+        end,
+    })
 
     -- snippets
     use("L3MON4D3/LuaSnip")

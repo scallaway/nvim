@@ -18,6 +18,7 @@ vim.keymap.set("n", "<leader>o", "<cmd>NvimTreeFindFile<cr>")
 
 -- TROUBLE --
 vim.keymap.set("n", "<C-e>", "<cmd>TroubleToggle document_diagnostics<cr>", { silent = true, noremap = true })
+vim.keymap.set("n", "<C-t>", "<cmd>TroubleToggle workspace_diagnostics<cr>", { silent = true, noremap = true })
 
 -- SPECTRE
 vim.keymap.set("n", "<LEADER>S", function()

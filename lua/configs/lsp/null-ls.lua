@@ -64,6 +64,9 @@ local sources = {
 
     -- C
     formatting.clang_format,
+
+    -- Golang
+    formatting.gofumpt,
 }
 
 local M = {}

@@ -70,6 +70,7 @@ for _, server in ipairs({
     "docker",
     "clangd",
     "bash",
+    "go",
 }) do
     require("configs.lsp." .. server).setup(on_attach, capabilities)
 end
