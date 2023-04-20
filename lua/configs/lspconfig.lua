@@ -71,6 +71,7 @@ for _, server in ipairs({
     "clangd",
     "bash",
     "go",
+    "vimls",
 }) do
     require("configs.lsp." .. server).setup(on_attach, capabilities)
 end
