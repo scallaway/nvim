@@ -24,3 +24,7 @@ vim.keymap.set("n", "<C-t>", "<cmd>TroubleToggle workspace_diagnostics<cr>", { s
 vim.keymap.set("n", "<LEADER>S", function()
     require("spectre").open()
 end)
+
+-- TERMINAL
+vim.keymap.set("t", "<C-l>", "<C-\\><C-n>")
+vim.keymap.set("t", "<Esc>", "<C-\\><C-n>")

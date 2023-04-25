@@ -5,6 +5,10 @@ require("packer").startup(function()
     -- For performance
     use("lewis6991/impatient.nvim")
 
+    -- Language Server installer
+    use("williamboman/mason.nvim")
+    use("williamboman/mason-lspconfig.nvim")
+
     -- LSP
     use({
         "neovim/nvim-lspconfig",
@@ -29,6 +33,8 @@ require("packer").startup(function()
     use("onsails/lspkind.nvim")
     use({
         "zbirenbaum/copilot.lua",
+        cmd = "Copilot",
+        event = "InsertEnter",
         config = function()
             require("configs.copilot")
         end,
@@ -37,20 +43,6 @@ require("packer").startup(function()
     -- snippets
     use("L3MON4D3/LuaSnip")
     use("rafamadriz/friendly-snippets")
-
-    -- Language Server installer
-    use({
-        "williamboman/mason.nvim",
-        config = function()
-            require("configs.mason")
-        end,
-    })
-    use({
-        "williamboman/mason-lspconfig.nvim",
-        config = function()
-            require("configs.mason-lspconfig")
-        end,
-    })
 
     -- Utils
     use("nvim-lua/plenary.nvim")
