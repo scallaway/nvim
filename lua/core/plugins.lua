@@ -29,8 +29,6 @@ require("packer").startup(function()
     use("hrsh7th/cmp-path")
     use("hrsh7th/cmp-cmdline")
     use("hrsh7th/cmp-nvim-lua")
-    use("saadparwaiz1/cmp_luasnip")
-    use("onsails/lspkind.nvim")
     use({
         "zbirenbaum/copilot.lua",
         cmd = "Copilot",
@@ -41,7 +39,6 @@ require("packer").startup(function()
     })
 
     -- snippets
-    use("L3MON4D3/LuaSnip")
     use("rafamadriz/friendly-snippets")
 
     -- Utils

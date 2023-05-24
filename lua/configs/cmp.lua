@@ -3,27 +3,13 @@ if not cmp_status_ok then
     return
 end
 
-local snip_status_ok, luasnip = pcall(require, "luasnip")
-if not snip_status_ok then
-    return
-end
-
 -- Don't break autocompletion if we can't get the icons
-local lsp_kind = require("lspkind")
-
-require("luasnip/loaders/from_vscode").lazy_load()
-
 local check_backspace = function()
     local col = vim.fn.col(".") - 1
     return col == 0 or vim.fn.getline("."):sub(col, col):match("%s")
 end
 
 cmp.setup({
-    snippet = {
-        expand = function(args)
-            luasnip.lsp_expand(args.body) -- For `luasnip` users.
-        end,
-    },
     mapping = {
         ["<C-k>"] = cmp.mapping.select_prev_item(),
         ["<C-j>"] = cmp.mapping.select_next_item(),
@@ -43,10 +29,6 @@ cmp.setup({
         ["<Tab>"] = cmp.mapping(function(fallback)
             if cmp.visible() then
                 cmp.select_next_item()
-            elseif luasnip.expandable() then
-                luasnip.expand()
-            elseif luasnip.expand_or_jumpable() then
-                luasnip.expand_or_jump()
             else
                 fallback()
             end
@@ -57,9 +39,6 @@ cmp.setup({
         ["<S-Tab>"] = cmp.mapping(function(fallback)
             if cmp.visible() then
                 cmp.select_prev_item()
-            elseif luasnip.jumpable(-1) then
-                luasnip.jump(-1)
-            else
                 fallback()
             end
         end, {
@@ -69,29 +48,24 @@ cmp.setup({
     },
     formatting = {
         fields = { "kind", "abbr", "menu" },
-        format = lsp_kind.cmp_format({
-            maxwidth = 50,
-
-            -- The function below will be called before any actual modifications from lspkind
-            -- so that you can provide more controls on popup customization. (See [#30](https://github.com/onsails/lspkind-nvim/pull/30))
-            before = function(entry, vim_item)
-                return vim_item
-            end,
-        }),
     },
     sources = {
         { name = "nvim_lsp", group_index = 2 },
         { name = "nvim_lua", group_index = 2 },
         { name = "path", group_index = 2 },
-        { name = "luasnip", group_index = 3 },
         { name = "buffer", group_index = 3 },
     },
     confirm_opts = {
         behavior = cmp.ConfirmBehavior.Replace,
         select = false,
     },
+    view = {
+        entries = {
+            name = "custom",
+            selection_order = "near_cursor",
+        },
+    },
     experimental = {
         ghost_text = false,
-        native_menu = false,
     },
 })
