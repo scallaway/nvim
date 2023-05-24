@@ -45,7 +45,12 @@ require("packer").startup(function()
     use("nvim-lua/plenary.nvim")
     use("jose-elias-alvarez/null-ls.nvim")
     use("tpope/vim-surround")
-    use("jiangmiao/auto-pairs")
+    use({
+        "windwp/nvim-autopairs",
+        config = function()
+            require("configs/autopairs")
+        end,
+    })
 
     -- Sessions
     use("rmagatti/auto-session")

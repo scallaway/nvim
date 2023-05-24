@@ -3,10 +3,9 @@ if not cmp_status_ok then
     return
 end
 
--- Don't break autocompletion if we can't get the icons
-local check_backspace = function()
-    local col = vim.fn.col(".") - 1
-    return col == 0 or vim.fn.getline("."):sub(col, col):match("%s")
+local cmp_autopairs_ok, cmp_autopairs = pcall(require, "nvim-autopairs.completion.cmp")
+if not cmp_autopairs_ok then
+    return
 end
 
 cmp.setup({
@@ -69,3 +68,5 @@ cmp.setup({
         ghost_text = false,
     },
 })
+
+cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done())
