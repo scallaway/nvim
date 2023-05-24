@@ -10,4 +10,7 @@ copilot.setup({
             accept = "<A-l>",
         },
     },
+    filetypes = {
+        text = false,
+    },
 })
