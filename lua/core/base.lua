@@ -55,3 +55,6 @@ vim.opt.guicursor = ""
 
 vim.opt.splitright = true
 vim.opt.splitbelow = true
+
+-- Better experience with session plugin
+vim.o.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"

@@ -47,6 +47,9 @@ require("packer").startup(function()
     use("tpope/vim-surround")
     use("jiangmiao/auto-pairs")
 
+    -- Sessions
+    use("rmagatti/auto-session")
+
     -- Customisation
     use("navarasu/onedark.nvim")
     use({
