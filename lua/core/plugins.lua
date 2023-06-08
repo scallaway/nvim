@@ -24,6 +24,7 @@ require("packer").startup(function()
             require("configs/cmp")
         end,
     })
+    use("L3MON4D3/LuaSnip")
     use("hrsh7th/cmp-nvim-lsp")
     use("hrsh7th/cmp-buffer")
     use("hrsh7th/cmp-path")

@@ -8,7 +8,17 @@ if not cmp_autopairs_ok then
     return
 end
 
+local luasnip_ok, luasnip = pcall(require, "luasnip")
+if not luasnip_ok then
+    return
+end
+
 cmp.setup({
+    snippet = {
+        expand = function(args)
+            require("luasnip").lsp_expand(args.body)
+        end,
+    },
     mapping = {
         ["<C-k>"] = cmp.mapping.select_prev_item(),
         ["<C-j>"] = cmp.mapping.select_next_item(),
@@ -28,6 +38,10 @@ cmp.setup({
         ["<Tab>"] = cmp.mapping(function(fallback)
             if cmp.visible() then
                 cmp.select_next_item()
+            elseif luasnip.expand_or_jumpable() then
+                luasnip.expand_or_jump()
+            elseif has_words_before() then
+                cmp.complete()
             else
                 fallback()
             end
@@ -38,6 +52,9 @@ cmp.setup({
         ["<S-Tab>"] = cmp.mapping(function(fallback)
             if cmp.visible() then
                 cmp.select_prev_item()
+            elseif luasnip.jumpable(-1) then
+                luasnip.jump(-1)
+            else
                 fallback()
             end
         end, {
