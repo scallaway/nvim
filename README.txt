@@ -6,7 +6,7 @@ daily basis.
 ---
 
 Requirements:
-	- NeoVim 0.8 (https://github.com/neovim/neovim)
+	- Neovim 0.9 (https://github.com/neovim/neovim)
 		- although I build from source because I like to live 
 	  	  dangerously
 	- Packer.nvim (https://github.com/wbthomason/packer.nvim)
