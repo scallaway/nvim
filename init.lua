@@ -1,7 +1,4 @@
-local impatient_ok, impatient = pcall(require, "impatient")
-if impatient_ok then
-    impatient.enable_profile()
-end
+vim.loader.enable()
 
 for _, source in ipairs({
     "core.base",

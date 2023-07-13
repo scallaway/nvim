@@ -21,3 +21,12 @@ There might be a few errors thrown by Tree Sitter, I've not been able to find
 the source of those yet. If you just exit and run the command again, it should
 complete without errors.
 
+
+---
+
+Current startup times (tested with Hyperfine):
+
+  Benchmark 1: nvim --headless +qa
+    Time (mean ± σ):      46.9 ms ±   8.3 ms    [User: 28.5 ms, System: 16.6 ms]
+    Range (min … max):    35.8 ms …  60.1 ms    78 runs
+ 

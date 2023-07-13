@@ -2,9 +2,6 @@ require("packer").startup(function()
     -- Plugin Loader
     use("wbthomason/packer.nvim")
 
-    -- For performance
-    use("lewis6991/impatient.nvim")
-
     -- Language Server installer
     use("williamboman/mason.nvim")
     use("williamboman/mason-lspconfig.nvim")
