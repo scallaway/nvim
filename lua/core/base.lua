@@ -2,10 +2,10 @@
 vim.opt.termguicolors = true
 
 -- Set line numbers
-vim.opt.number = true
+-- vim.opt.number = true
 
 -- Also display the relative numbers surrounding
-vim.opt.relativenumber = true
+-- vim.opt.relativenumber = true
 
 -- Set a ruler at 80 chars
 vim.opt.colorcolumn = "80"
