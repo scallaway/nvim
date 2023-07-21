@@ -12,9 +12,8 @@ vim.keymap.set("n", "<C-f>", function()
     require("telescope.builtin").live_grep()
 end)
 
--- NVIM-TREE --
-vim.keymap.set("n", "<C-n>", "<cmd>NvimTreeToggle<cr>")
-vim.keymap.set("n", "<leader>o", "<cmd>NvimTreeFindFile<cr>")
+-- netrw --
+vim.keymap.set("n", "<LEADER>o", ":Vex %:h<CR>")
 
 -- TROUBLE --
 vim.keymap.set("n", "<C-e>", "<cmd>TroubleToggle document_diagnostics<cr>", { silent = true, noremap = true })

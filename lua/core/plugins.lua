@@ -49,6 +49,7 @@ require("packer").startup(function()
             require("configs/autopairs")
         end,
     })
+    use("tpope/vim-vinegar")
 
     -- Sessions
     use("rmagatti/auto-session")
@@ -129,12 +130,5 @@ require("packer").startup(function()
             require("configs.nvim-spectre")
         end,
     })
-
-    -- File tree
-    use({
-        "kyazdani42/nvim-tree.lua",
-        config = function()
-            require("configs.nvim-tree")
-        end,
-    })
+    use("duane9/nvim-rg")
 end)
