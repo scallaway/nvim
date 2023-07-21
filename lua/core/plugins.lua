@@ -133,10 +133,4 @@ require("packer").startup(function()
             require("configs.nvim-tree")
         end,
     })
-
-    -- Code runing
-    use({
-        "michaelb/sniprun",
-        run = "bash install.sh",
-    })
 end)
