@@ -77,13 +77,6 @@ require("packer").startup(function()
     })
     use("jose-elias-alvarez/typescript.nvim")
     use({
-        "folke/trouble.nvim",
-        requires = "kyazdani42/nvim-web-devicons",
-        config = function()
-            require("configs.trouble")
-        end,
-    })
-    use({
         "numToStr/Comment.nvim",
         config = function()
             require("configs.comment")
