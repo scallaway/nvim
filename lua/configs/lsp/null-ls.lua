@@ -59,9 +59,6 @@ local sources = {
     -- Rust
     formatting.rustfmt,
 
-    -- Git
-    code_actions.gitsigns,
-
     -- C
     formatting.clang_format,
 
