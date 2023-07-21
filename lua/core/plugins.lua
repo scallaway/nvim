@@ -55,13 +55,6 @@ require("packer").startup(function()
 
     -- Customisation
     use("navarasu/onedark.nvim")
-    use({
-        "nvim-lualine/lualine.nvim",
-        config = function()
-            require("configs.lualine")
-        end,
-    })
-    use("arkav/lualine-lsp-progress")
     use("kyazdani42/nvim-web-devicons")
 
     -- Code

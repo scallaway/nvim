@@ -40,9 +40,6 @@ vim.opt.clipboard = "unnamedplus"
 -- Options for insert mode completion
 vim.opt.completeopt = { "menu", "menuone", "noselect" }
 
--- Don't show the current mode in the command line
-vim.opt.showmode = false
-
 -- Reduce the updatetime of vim
 vim.opt.updatetime = 100
 
