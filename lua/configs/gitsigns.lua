@@ -11,6 +11,7 @@ gitsigns.setup({
         delay = 200,
         ignore_whitespace = false,
     },
+    signcolumn = false,
     on_attach = function(bufnr)
         local gs = package.loaded.gitsigns
 
