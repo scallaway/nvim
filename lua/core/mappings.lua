@@ -27,3 +27,9 @@ end)
 -- TERMINAL
 vim.keymap.set("t", "<C-l>", "<C-\\><C-n>")
 vim.keymap.set("t", "<Esc>", "<C-\\><C-n>")
+
+-- Human Error Correction (because typos are common at speed)
+vim.keymap.set("n", "W", "w")
+vim.keymap.set("n", "Q", "q")
+vim.keymap.set("n", "Wq", "wq")
+vim.keymap.set("n", "Noh", "noh")
