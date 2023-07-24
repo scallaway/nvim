@@ -15,9 +15,6 @@ local completion = null_ls.builtins.completion
 local sources = {
     -- Lua
     formatting.stylua,
-    diagnostics.selene.with({
-        condition = with_root_file("selene.toml"),
-    }),
 
     -- TS/JS
     code_actions.eslint_d,
