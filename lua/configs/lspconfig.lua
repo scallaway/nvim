@@ -83,6 +83,14 @@ end
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = cmp_nvim_lsp.default_capabilities(capabilities)
 
+vim.diagnostic.config({
+    -- Don't show the signs in the gutter (to prevent code moving left and right)
+    signs = false,
+
+    -- Update the warnings in real time if possible
+    update_in_insert = true,
+})
+
 for _, server in ipairs({
     "null-ls",
     "pyright",
