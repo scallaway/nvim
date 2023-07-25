@@ -14,6 +14,7 @@ end)
 
 -- netrw --
 vim.keymap.set("n", "<LEADER>o", ":Vex %:h<CR>")
+vim.keymap.set("n", "<C-n>", ":Ex<CR>")
 
 -- SPECTRE
 vim.keymap.set("n", "<LEADER>S", function()
