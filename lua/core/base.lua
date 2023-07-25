@@ -1,12 +1,6 @@
 -- Use true colors
 vim.opt.termguicolors = true
 
--- Set line numbers
--- vim.opt.number = true
-
--- Also display the relative numbers surrounding
--- vim.opt.relativenumber = true
-
 -- Set a ruler at 80 chars
 vim.opt.colorcolumn = "80"
 
@@ -55,3 +49,6 @@ vim.opt.splitbelow = true
 
 -- Better experience with session plugin
 vim.o.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
+
+-- Turn spelling off by default
+vim.opt.spell = false
