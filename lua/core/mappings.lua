@@ -1,4 +1,5 @@
 local utils = require("utils")
+
 -- Rebind Ctrl+L to ESC
 vim.keymap.set("i", "<C-l>", "<ESC>")
 
