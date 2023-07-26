@@ -89,6 +89,12 @@ require("packer").startup(function()
 
     -- Git
     use("tpope/vim-fugitive")
+    use({
+        "lewis6991/gitsigns.nvim",
+        config = function()
+            require("configs.git-signs")
+        end,
+    })
 
     -- Searching
     use("nvim-telescope/telescope.nvim")

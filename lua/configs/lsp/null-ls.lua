@@ -61,6 +61,9 @@ local sources = {
 
     -- Golang
     formatting.gofumpt,
+
+    -- Git
+    code_actions.gitsigns,
 }
 
 local M = {}
