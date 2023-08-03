@@ -1,6 +1,3 @@
--- Use true colors
-vim.opt.termguicolors = true
-
 -- Set a ruler at 80 chars
 vim.opt.colorcolumn = "80"
 
