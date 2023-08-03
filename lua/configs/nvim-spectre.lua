@@ -3,4 +3,8 @@ if not status_ok then
     return
 end
 
+vim.keymap.set("n", "<LEADER>S", function()
+    require("spectre").open()
+end)
+
 nvim_spectre.setup()
