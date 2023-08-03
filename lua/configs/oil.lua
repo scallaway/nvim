@@ -8,8 +8,8 @@ vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
 -- Keymaps
-vim.keymap.set("n", "<LEADER>o", ":Oil .<CR>")
--- vim.keymap.set("n", "<C-n>", ":Oil<CR>")
+vim.keymap.set("n", "<LEADER>o", ":Oil<CR>")
+vim.keymap.set("n", "<C-n>", ":Oil . <CR>")
 vim.keymap.set("n", "-", require("oil").open, { desc = "Open parent directory" })
 
 oil.setup({
