@@ -13,9 +13,10 @@ vim.keymap.set("n", "<C-f>", function()
     require("telescope.builtin").live_grep()
 end)
 
--- netrw --
-vim.keymap.set("n", "<LEADER>o", ":Vex %:h<CR>")
-vim.keymap.set("n", "<C-n>", ":Ex<CR>")
+-- oil --
+vim.keymap.set("n", "<LEADER>o", ":Oil .<CR>")
+-- vim.keymap.set("n", "<C-n>", ":Oil<CR>")
+vim.keymap.set("n", "-", require("oil").open, { desc = "Open parent directory" })
 
 -- SPECTRE
 vim.keymap.set("n", "<LEADER>S", function()

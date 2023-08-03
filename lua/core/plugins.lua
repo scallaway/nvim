@@ -2,6 +2,9 @@ require("packer").startup(function()
     -- Plugin Loader
     use("wbthomason/packer.nvim")
 
+    -- Some defaults
+    use("tpope/vim-sensible")
+
     -- Language Server installer
     use("williamboman/mason.nvim")
     use("williamboman/mason-lspconfig.nvim")
@@ -49,7 +52,12 @@ require("packer").startup(function()
             require("configs/autopairs")
         end,
     })
-    use("tpope/vim-vinegar")
+    use({
+        "stevearc/oil.nvim",
+        config = function()
+            require("configs/oil")
+        end,
+    })
 
     -- Sessions
     use("rmagatti/auto-session")
