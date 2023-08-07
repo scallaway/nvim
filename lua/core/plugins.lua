@@ -63,7 +63,7 @@ require("packer").startup(function()
     use("rmagatti/auto-session")
 
     -- Customisation
-    use({ "scallaway/onedark.nvim", branch = "method-style" }) -- remove branch when on upstream
+    use({ "scallaway/onedark.nvim" }) -- remove branch when on upstream
     use("kyazdani42/nvim-web-devicons")
 
     -- Code
