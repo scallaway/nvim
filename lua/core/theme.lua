@@ -9,6 +9,7 @@ require("onedark").setup({
         functions = "bold",
         strings = "none",
         variables = "none",
+        constants = "bold",
     },
 })
 

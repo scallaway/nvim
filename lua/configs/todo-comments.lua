@@ -5,4 +5,7 @@ end
 
 todo_comments.setup({
     signs = false,
+    keywords = {
+        NOCHECKIN = { color = "warning" },
+    },
 })
