@@ -7,6 +7,8 @@ end
 
 local M = {}
 
+vim.keymap.set("n", "ge", ":TypescriptGoToSourceDefinition<CR>")
+
 M.setup = function(on_attach, capabilities)
     typescript.setup({
         server = {
