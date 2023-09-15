@@ -4,7 +4,7 @@ if not status_ok then
 end
 
 treesitter.setup({
-    ensure_installed = { "javascript", "typescript", "python", "rust" },
+    ensure_installed = { "css", "gitcommit", "gitignore", "javascript", "python", "rust", "typescript" },
     sync_install = false,
     auto_install = true,
     highlight = {
