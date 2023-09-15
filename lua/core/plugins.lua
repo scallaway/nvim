@@ -54,6 +54,10 @@ local plugins = {
     -- Utils
     "nvim-lua/plenary.nvim",
     "jose-elias-alvarez/null-ls.nvim",
+    {
+        "creativenull/efmls-configs-nvim",
+        dependencies = { "neovim/nvim-lspconfig" },
+    },
     "tpope/vim-surround",
     {
         "windwp/nvim-autopairs",
