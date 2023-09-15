@@ -1,124 +1,131 @@
-require("packer").startup(function()
-    -- Plugin Loader
-    use("wbthomason/packer.nvim")
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+    vim.fn.system({
+        "git",
+        "clone",
+        "--filter=blob:none",
+        "https://github.com/folke/lazy.nvim.git",
+        "--branch=stable", -- latest stable release
+        lazypath,
+    })
+end
+vim.opt.rtp:prepend(lazypath)
 
+local plugins = {
     -- Some defaults
-    use("tpope/vim-sensible")
+    "tpope/vim-sensible",
 
     -- Language Server installer
-    use("williamboman/mason.nvim")
-    use("williamboman/mason-lspconfig.nvim")
+    "williamboman/mason.nvim",
+    "williamboman/mason-lspconfig.nvim",
 
     -- LSP
-    use({
+    {
         "neovim/nvim-lspconfig",
         config = function()
             require("configs.lspconfig")
         end,
-    })
+    },
 
     -- Autocompletion
-    use({
+    {
         "hrsh7th/nvim-cmp",
         config = function()
             require("configs/cmp")
         end,
-    })
-    use("L3MON4D3/LuaSnip")
-    use("hrsh7th/cmp-nvim-lsp")
-    use("hrsh7th/cmp-buffer")
-    use("hrsh7th/cmp-path")
-    use("hrsh7th/cmp-cmdline")
-    use("hrsh7th/cmp-nvim-lua")
-    use({
+    },
+    { "L3MON4D3/LuaSnip", dependencies = {
+        "rafamadriz/friendly-snippets",
+    } },
+    "hrsh7th/cmp-nvim-lsp",
+    "hrsh7th/cmp-buffer",
+    "hrsh7th/cmp-path",
+    "hrsh7th/cmp-cmdline",
+    "hrsh7th/cmp-nvim-lua",
+    {
         "zbirenbaum/copilot.lua",
         cmd = "Copilot",
         event = "InsertEnter",
         config = function()
             require("configs.copilot")
         end,
-    })
-
-    -- snippets
-    use("rafamadriz/friendly-snippets")
+    },
 
     -- Utils
-    use("nvim-lua/plenary.nvim")
-    use("jose-elias-alvarez/null-ls.nvim")
-    use("tpope/vim-surround")
-    use({
+    "nvim-lua/plenary.nvim",
+    "jose-elias-alvarez/null-ls.nvim",
+    "tpope/vim-surround",
+    {
         "windwp/nvim-autopairs",
         config = function()
             require("configs/autopairs")
         end,
-    })
-    use({
+    },
+    {
         "stevearc/oil.nvim",
         config = function()
             require("configs/oil")
         end,
-    })
+    },
 
     -- Sessions
-    use("rmagatti/auto-session")
+    "rmagatti/auto-session",
 
     -- Customisation
-    use({ "navarasu/onedark.nvim" }) -- remove branch when on upstream
-    use("kyazdani42/nvim-web-devicons")
+    "navarasu/onedark.nvim",
+    "kyazdani42/nvim-web-devicons",
 
     -- Code
-    use({
+    {
         "nvim-treesitter/nvim-treesitter",
-        run = ":TSUpdate",
+        build = ":TSUpdate",
         config = function()
             require("configs.nvim-treesitter")
         end,
-    })
-    use({
+    },
+    {
         "folke/todo-comments.nvim",
         config = function()
             require("configs.todo-comments")
         end,
-    })
-    use({
+    },
+    {
         "christoomey/vim-sort-motion",
-    })
-    use("jose-elias-alvarez/typescript.nvim")
-    use({
+    },
+    "jose-elias-alvarez/typescript.nvim",
+    {
         "numToStr/Comment.nvim",
         config = function()
             require("configs.comment")
         end,
-    })
+    },
     -- Fix commenting in TS contexts (with embedded languages)
-    use({
+    {
         "JoosepAlviste/nvim-ts-context-commentstring",
-    })
+    },
 
     -- Git
-    use("tpope/vim-fugitive")
-    use({
-        "lewis6991/gitsigns.nvim",
-        config = function()
-            require("configs.git-signs")
-        end,
-    })
+    "tpope/vim-fugitive",
 
     -- Searching
-    use("nvim-telescope/telescope.nvim")
-    use({
+    "nvim-telescope/telescope.nvim",
+    {
         "nvim-telescope/telescope-fzf-native.nvim",
-        run = "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build",
+        build = "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build",
         config = function()
             require("configs.nvim-telescope")
         end,
-    })
-    use("tpope/vim-abolish")
-    use({
+    },
+    "tpope/vim-abolish",
+    {
         "nvim-pack/nvim-spectre",
         config = function()
             require("configs.nvim-spectre")
         end,
-    })
-    use("duane9/nvim-rg")
-end)
+    },
+    "duane9/nvim-rg",
+}
+
+local opts = {}
+
+require("lazy").setup(plugins, opts)
