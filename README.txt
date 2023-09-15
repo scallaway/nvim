@@ -9,18 +9,6 @@ Requirements:
 	- Neovim 0.9 (https://github.com/neovim/neovim)
 		- although I build from source because I like to live 
 	  	  dangerously
-	- Packer.nvim (https://github.com/wbthomason/packer.nvim)
-
-Make sure you have `packer` installed somewhere that is accessible to your
-user (and your neovim configuration)
-
-Run `PackerSync` to get the latest versions of the plugins (at some point
-there will be some documentation about all of them).
-
-There might be a few errors thrown by Tree Sitter, I've not been able to find
-the source of those yet. If you just exit and run the command again, it should
-complete without errors.
-
 
 ---
 
@@ -29,5 +17,9 @@ Current startup times (tested with Hyperfine):
   ❯ hyperfine "nvim --headless +qa"
 
     Benchmark 1: nvim --headless +qa
-      Time (mean ± σ):      33.7 ms ±   1.0 ms    [User: 24.3 ms, System: 9.3 ms]
-      Range (min … max):    31.9 ms …  37.6 ms    86 runs
+      Time (mean ± σ):      37.1 ms ±   1.1 ms    [User: 28.6 ms, System: 8.3 ms]
+      Range (min … max):    34.9 ms …  40.9 ms    81 runs
+
+There's more work to be done here in terms of startup time, but that involves a
+lot of "lazy" configuration and, to be honest, 37ms of startup is really not
+that bad.
