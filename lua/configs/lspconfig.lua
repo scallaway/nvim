@@ -1,7 +1,7 @@
 local utils = require("utils")
 
-local status_ok, mason = pcall(require, "mason")
-if not status_ok then
+local mason_status_ok, mason = pcall(require, "mason")
+if not mason_status_ok then
     return
 end
 
@@ -15,27 +15,27 @@ mason.setup({
     },
 })
 
-local status_ok, mason_lspconfig = pcall(require, "mason-lspconfig")
-if not status_ok then
+local masonlsp_status_ok, mason_lspconfig = pcall(require, "mason-lspconfig")
+if not masonlsp_status_ok then
     return
 end
 
 mason_lspconfig.setup()
 
-local status_ok, lspconfig = pcall(require, "lspconfig")
-if not status_ok then
+local lsp_status_ok, _ = pcall(require, "lspconfig")
+if not lsp_status_ok then
     return
 end
 
-local status_ok, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
-if not status_ok then
+local cmp_status_ok, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
+if not cmp_status_ok then
     return
 end
 
 local lsp_formatting = function(bufnr)
     vim.lsp.buf.format({
         filter = function(client)
-            return client.name == "null-ls"
+            return client.name == "efm"
         end,
         bufnr = bufnr,
     })
@@ -88,7 +88,7 @@ vim.diagnostic.config({
 })
 
 for _, server in ipairs({
-    "null-ls",
+    "efm",
     "pyright",
     "svelte",
     "tsserver",
@@ -98,6 +98,7 @@ for _, server in ipairs({
     "bash",
     "go",
     "vimls",
+    "lua",
 }) do
     require("configs.lsp." .. server).setup(on_attach, capabilities)
 end
