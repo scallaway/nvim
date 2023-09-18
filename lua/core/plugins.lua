@@ -34,9 +34,7 @@ local plugins = {
             require("configs/cmp")
         end,
     },
-    { "L3MON4D3/LuaSnip", dependencies = {
-        "rafamadriz/friendly-snippets",
-    } },
+    "L3MON4D3/LuaSnip",
     "hrsh7th/cmp-nvim-lsp",
     "hrsh7th/cmp-buffer",
     "hrsh7th/cmp-path",
@@ -53,7 +51,6 @@ local plugins = {
 
     -- Utils
     "nvim-lua/plenary.nvim",
-    "jose-elias-alvarez/null-ls.nvim",
     {
         "creativenull/efmls-configs-nvim",
         dependencies = { "neovim/nvim-lspconfig" },
