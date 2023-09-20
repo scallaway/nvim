@@ -1,6 +1,9 @@
 -- Set a ruler at 80 chars
 vim.opt.colorcolumn = "80"
 
+-- Highlight the current line
+vim.opt.cursorline = true
+
 -- Enable mouse support
 vim.opt.mouse = "a"
 
