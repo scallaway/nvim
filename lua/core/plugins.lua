@@ -25,6 +25,9 @@ local plugins = {
         config = function()
             require("configs.lspconfig")
         end,
+        opts = {
+            format = { timeout_ms = 10000 },
+        },
     },
 
     -- Autocompletion
