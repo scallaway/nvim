@@ -107,6 +107,7 @@ local plugins = {
 
     -- Git
     "tpope/vim-fugitive",
+    "airblade/vim-gitgutter",
 
     -- Searching
     "nvim-telescope/telescope.nvim",

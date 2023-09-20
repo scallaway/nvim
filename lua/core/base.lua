@@ -43,3 +43,6 @@ vim.opt.splitbelow = true
 
 -- Better experience with session plugin
 vim.o.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
+
+-- Keep the sign column open at all times to prevent code shift with gitsigns
+vim.opt.signcolumn = "yes"
