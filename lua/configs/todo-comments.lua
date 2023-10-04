@@ -8,4 +8,8 @@ todo_comments.setup({
     keywords = {
         NOCHECKIN = { color = "warning" },
     },
+    search = {
+        -- TODO: add support for KEYWORDS(username) structure
+        pattern = [[\b(KEYWORDS):]],
+    },
 })

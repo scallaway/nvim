@@ -110,7 +110,13 @@ local plugins = {
 
     -- Git
     "tpope/vim-fugitive",
-    "airblade/vim-gitgutter",
+    -- "airblade/vim-gitgutter",
+    {
+        "lewis6991/gitsigns.nvim",
+        config = function()
+            require("configs.gitsigns")
+        end,
+    },
 
     -- Searching
     "nvim-telescope/telescope.nvim",

@@ -38,6 +38,7 @@ local lsp_formatting = function(bufnr)
             return client.name == "efm"
         end,
         bufnr = bufnr,
+        timeout_ms = 10000,
     })
 end
 

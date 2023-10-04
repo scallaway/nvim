@@ -34,7 +34,6 @@ local languages = {
         lint_eslint_d,
     },
     typescript = {
-        require("efmls-configs.formatters.prettier_d"),
         format_eslint_d,
         lint_eslint_d,
     },
@@ -45,6 +44,18 @@ local languages = {
 
     rust = {
         require("efmls-configs.formatters.rustfmt"),
+    },
+
+    cpp = {
+        require("efmls-configs.formatters.clang_format"),
+    },
+
+    json = {
+        require("efmls-configs.formatters.jq"),
+    },
+
+    toml = {
+        require("efmls-configs.formatters.taplo"),
     },
 }
 
