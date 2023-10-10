@@ -77,7 +77,7 @@ local plugins = {
 
     -- Customisation
     "navarasu/onedark.nvim",
-    "kyazdani42/nvim-web-devicons",
+    "nvim-tree/nvim-web-devicons",
 
     -- Code
     {
