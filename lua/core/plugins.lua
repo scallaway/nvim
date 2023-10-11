@@ -76,8 +76,8 @@ local plugins = {
     "rmagatti/auto-session",
 
     -- Customisation
-    "navarasu/onedark.nvim",
-    "nvim-tree/nvim-web-devicons",
+    "aktersnurra/no-clown-fiesta.nvim",
+    "kyazdani42/nvim-web-devicons",
 
     -- Code
     {

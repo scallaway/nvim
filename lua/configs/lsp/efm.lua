@@ -21,6 +21,7 @@ local languages = {
     python = {
         require("efmls-configs.linters.flake8"),
         require("efmls-configs.formatters.black"),
+        require("efmls-configs.formatters.isort"),
     },
 
     html = { format_eslint_d },

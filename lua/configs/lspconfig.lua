@@ -89,17 +89,18 @@ vim.diagnostic.config({
 })
 
 for _, server in ipairs({
+    "bash",
+    "clangd",
+    "docker",
     "efm",
+    "go",
+    "intelephense",
+    "lua",
     "pyright",
+    "rust",
     "svelte",
     "tsserver",
-    "rust",
-    "docker",
-    "clangd",
-    "bash",
-    "go",
     "vimls",
-    "lua",
 }) do
     require("configs.lsp." .. server).setup(on_attach, capabilities)
 end
