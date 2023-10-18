@@ -76,7 +76,7 @@ local plugins = {
     "rmagatti/auto-session",
 
     -- Customisation
-    "aktersnurra/no-clown-fiesta.nvim",
+    "rebelot/kanagawa.nvim",
     "kyazdani42/nvim-web-devicons",
 
     -- Code
