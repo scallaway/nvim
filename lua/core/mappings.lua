@@ -1,5 +1,3 @@
-local utils = require("utils")
-
 -- Rebind Ctrl+L to ESC
 vim.keymap.set("i", "<C-l>", "<ESC>")
 vim.keymap.set("v", "<C-l>", "<ESC>")
@@ -16,3 +14,5 @@ vim.api.nvim_create_user_command("Wq", "wq", {})
 vim.api.nvim_create_user_command("Wqa", "wqa", {})
 vim.api.nvim_create_user_command("WQa", "wqa", {})
 vim.api.nvim_create_user_command("Noh", "noh", {})
+vim.api.nvim_create_user_command("Vsp", "vsp", {})
+vim.api.nvim_create_user_command("Sp", "sp", {})
