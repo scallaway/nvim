@@ -15,13 +15,6 @@ mason.setup({
     },
 })
 
-local masonlsp_status_ok, mason_lspconfig = pcall(require, "mason-lspconfig")
-if not masonlsp_status_ok then
-    return
-end
-
-mason_lspconfig.setup()
-
 local lsp_status_ok, _ = pcall(require, "lspconfig")
 if not lsp_status_ok then
     return

@@ -17,7 +17,6 @@ local plugins = {
 
     -- Language Server installer
     "williamboman/mason.nvim",
-    "williamboman/mason-lspconfig.nvim",
 
     -- LSP
     {
@@ -60,20 +59,11 @@ local plugins = {
     },
     "tpope/vim-surround",
     {
-        "windwp/nvim-autopairs",
-        config = function()
-            require("configs/autopairs")
-        end,
-    },
-    {
         "stevearc/oil.nvim",
         config = function()
             require("configs/oil")
         end,
     },
-
-    -- Sessions
-    "rmagatti/auto-session",
 
     -- Customisation
     "rebelot/kanagawa.nvim",
@@ -110,13 +100,6 @@ local plugins = {
 
     -- Git
     "tpope/vim-fugitive",
-    -- "airblade/vim-gitgutter",
-    {
-        "lewis6991/gitsigns.nvim",
-        config = function()
-            require("configs.gitsigns")
-        end,
-    },
 
     -- Searching
     "nvim-telescope/telescope.nvim",
@@ -127,7 +110,6 @@ local plugins = {
             require("configs.nvim-telescope")
         end,
     },
-    "tpope/vim-abolish",
     {
         "nvim-pack/nvim-spectre",
         config = function()
