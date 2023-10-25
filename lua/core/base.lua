@@ -13,9 +13,6 @@ vim.opt.copyindent = true
 -- Highlight the current search
 vim.opt.hlsearch = true
 
--- Progressively highlight the current search
-vim.opt.incsearch = true
-
 -- Smart case-sensitive searching
 vim.opt.smartcase = true
 

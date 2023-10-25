@@ -15,6 +15,9 @@ local plugins = {
     -- Some defaults
     "tpope/vim-sensible",
 
+    -- Utils
+    "nvim-lua/plenary.nvim",
+
     -- Language Server installer
     "williamboman/mason.nvim",
 
@@ -33,7 +36,7 @@ local plugins = {
     {
         "hrsh7th/nvim-cmp",
         config = function()
-            require("configs/cmp")
+            require("configs.cmp")
         end,
     },
     "L3MON4D3/LuaSnip",
@@ -42,17 +45,9 @@ local plugins = {
     "hrsh7th/cmp-path",
     "hrsh7th/cmp-cmdline",
     "hrsh7th/cmp-nvim-lua",
-    {
-        "zbirenbaum/copilot.lua",
-        cmd = "Copilot",
-        event = "InsertEnter",
-        config = function()
-            require("configs.copilot")
-        end,
-    },
 
     -- Utils
-    "nvim-lua/plenary.nvim",
+    -- "nvim-lua/plenary.nvim",
     {
         "creativenull/efmls-configs-nvim",
         dependencies = { "neovim/nvim-lspconfig" },
@@ -61,7 +56,7 @@ local plugins = {
     {
         "stevearc/oil.nvim",
         config = function()
-            require("configs/oil")
+            require("configs.oil")
         end,
     },
 
@@ -84,36 +79,20 @@ local plugins = {
         end,
     },
     {
-        "christoomey/vim-sort-motion",
-    },
-    "jose-elias-alvarez/typescript.nvim",
-    {
         "numToStr/Comment.nvim",
         config = function()
             require("configs.comment")
         end,
-    },
-    -- Fix commenting in TS contexts (with embedded languages)
-    {
-        "JoosepAlviste/nvim-ts-context-commentstring",
     },
 
     -- Git
     "tpope/vim-fugitive",
 
     -- Searching
-    "nvim-telescope/telescope.nvim",
     {
-        "nvim-telescope/telescope-fzf-native.nvim",
-        build = "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build",
+        "nvim-telescope/telescope.nvim",
         config = function()
             require("configs.nvim-telescope")
-        end,
-    },
-    {
-        "nvim-pack/nvim-spectre",
-        config = function()
-            require("configs.nvim-spectre")
         end,
     },
     "duane9/nvim-rg",

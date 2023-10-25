@@ -91,8 +91,8 @@ for _, server in ipairs({
     "lua",
     "pyright",
     "rust",
+    "typescript",
     "svelte",
-    "tsserver",
     "vimls",
 }) do
     require("configs.lsp." .. server).setup(on_attach, capabilities)
