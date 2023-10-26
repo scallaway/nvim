@@ -17,6 +17,9 @@ telescope.setup({
         find_files = {
             theme = "ivy",
             previewer = false,
+            layout_config = {
+                height = 10,
+            },
         },
         live_grep = {
             layout_config = {
@@ -32,4 +35,13 @@ telescope.setup({
             "**/static/*",
         },
     },
+    extensions = {
+        fzf = {
+            fuzzy = true,
+            override_generic_sorter = true,
+            override_file_sorter = true,
+        },
+    },
 })
+
+require("telescope").load_extension("fzf")
