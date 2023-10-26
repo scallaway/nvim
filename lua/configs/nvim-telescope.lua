@@ -15,15 +15,18 @@ end)
 telescope.setup({
     pickers = {
         find_files = {
+            theme = "ivy",
             previewer = false,
+        },
+        live_grep = {
+            layout_config = {
+                width = 0.75,
+                height = 24,
+                preview_width = 100,
+            },
         },
     },
     defaults = {
-        layout_config = {
-            width = 0.50,
-            height = 0.50,
-            preview_cutoff = 120,
-        },
         file_ignore_patterns = {
             "%.min.*",
             "**/static/*",
