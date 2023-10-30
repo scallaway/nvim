@@ -24,7 +24,7 @@ telescope.setup({
         live_grep = {
             layout_config = {
                 width = 0.75,
-                height = 24,
+                height = 0.8,
                 preview_width = 100,
             },
         },
