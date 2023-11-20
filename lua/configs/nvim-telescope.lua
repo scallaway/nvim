@@ -3,6 +3,8 @@ if not status_ok then
     return
 end
 
+local conf = require("telescope.config").values
+
 vim.keymap.set("n", "<C-p>", function()
     -- Use Ctrl+P to search through file names
     require("telescope.builtin").find_files()
@@ -27,6 +29,7 @@ telescope.setup({
                 height = 0.8,
                 preview_width = 100,
             },
+            vimgrep_arguments = table.insert(conf.vimgrep_arguments, "--fixed-strings"),
         },
     },
     defaults = {
