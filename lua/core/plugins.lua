@@ -58,7 +58,13 @@ local plugins = {
         "creativenull/efmls-configs-nvim",
         dependencies = { "neovim/nvim-lspconfig" },
     },
-    "tpope/vim-surround",
+    {
+        "kylechui/nvim-surround",
+        event = "VeryLazy",
+        config = function()
+            require("configs.surround")
+        end,
+    },
     {
         "stevearc/oil.nvim",
         config = function()
@@ -82,6 +88,10 @@ local plugins = {
         config = function()
             require("configs.nvim-treesitter")
         end,
+    },
+    {
+        "nvim-treesitter/nvim-treesitter-textobjects",
+        dependencies = { "nvim-treesitter/nvim-treesitter" },
     },
     {
         "folke/todo-comments.nvim",
