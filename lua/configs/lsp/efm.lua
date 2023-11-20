@@ -59,6 +59,8 @@ local languages = {
     toml = {
         require("efmls-configs.formatters.taplo"),
     },
+
+    protolint = { require("efmls-configs.formatters.protolint") },
 }
 
 M.setup = function(on_attach, capabilities)
