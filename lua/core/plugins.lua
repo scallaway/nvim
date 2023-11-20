@@ -45,6 +45,12 @@ local plugins = {
     "hrsh7th/cmp-path",
     "hrsh7th/cmp-cmdline",
     "hrsh7th/cmp-nvim-lua",
+    {
+        "onsails/lspkind.nvim",
+        config = function()
+            require("configs.lspkind")
+        end,
+    },
 
     -- Utils
     -- "nvim-lua/plenary.nvim",
@@ -62,7 +68,12 @@ local plugins = {
 
     -- Customisation
     "rebelot/kanagawa.nvim",
-    "kyazdani42/nvim-web-devicons",
+    {
+        "nvim-tree/nvim-web-devicons",
+        config = function()
+            require("configs.web-devicons")
+        end,
+    },
 
     -- Code
     {
