@@ -86,7 +86,13 @@ local plugins = {
     },
 
     -- Git
-    "tpope/vim-fugitive",
+    {
+        "tpope/vim-fugitive",
+        config = function()
+            require("configs.fugitive")
+        end,
+    },
+    "airblade/vim-gitgutter",
 
     -- Searching
     {
