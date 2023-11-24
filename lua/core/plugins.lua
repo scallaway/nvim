@@ -1,3 +1,7 @@
+if vim.g.vscode then
+    return
+end
+
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
     vim.fn.system({
@@ -21,7 +25,21 @@ local plugins = {
     "nvim-lua/plenary.nvim",
 
     -- Language Server installer
-    "williamboman/mason.nvim",
+    {
+        "williamboman/mason.nvim",
+        config = function()
+            require("configs.mason")
+        end,
+    },
+    {
+        "williamboman/mason-lspconfig.nvim",
+        dependencies = {
+            "williamboman/mason.nvim",
+        },
+        config = function()
+            require("configs.mason-lspconfig")
+        end,
+    },
 
     -- LSP
     {

@@ -3,7 +3,7 @@ if not status_ok then
     return
 end
 
-return mason.setup({
+mason.setup({
     ui = {
         icons = {
             package_installed = "✓",
