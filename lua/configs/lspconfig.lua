@@ -88,6 +88,7 @@ for _, server in ipairs({
     "efm",
     "go",
     "intelephense",
+    "pyright",
     "jedi",
     "lua",
     "rust",

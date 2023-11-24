@@ -11,7 +11,7 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-local work_config = dofile(os.getenv("WORK_DIR") .. "/nvim/init.lua")
+local utils = require("utils")
 
 local plugins = {
     -- Some defaults
@@ -135,7 +135,7 @@ local plugins = {
 }
 
 -- Add any work-related plugins that are required
-table.insert(plugins, work_config.plugins)
+table.insert(plugins, utils.work_config.plugins)
 
 local opts = {}
 
