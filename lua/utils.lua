@@ -25,7 +25,8 @@ end
 
 M.work_config = nil
 
-local work_config, _ = pcall(dofile(os.getenv("WORK_DIR") .. "/nvim/init.lua"))
+local work_config, _ =
+    pcall(dofile(os.getenv("WORK_DIR") or "" .. "/nvim/init.lua"))
 
 if work_config then
     M.work_config = work_config
