@@ -25,11 +25,26 @@ end
 
 M.work_config = nil
 
-local work_config, _ =
-    pcall(dofile((os.getenv("WORK_DIR") or "") .. "/nvim/init.lua"))
+local has_work_config = function()
+    -- If we don't have a work dir, we won't be able to get a work config
+    if os.getenv("WORK_DIR") == nil then
+        return false
+    end
 
-if work_config then
-    M.work_config = work_config
+    -- Check if we can open the file
+    local file = io.open(os.getenv("WORK_DIR") .. "/nvim/init.lua", "r")
+
+    -- If we have a file, close it and state that we have access to it
+    if file ~= nil then
+        io.close(file)
+        return true
+    else
+        return false
+    end
+end
+
+if has_work_config() then
+    M.work_config = dofile((os.getenv("WORK_DIR") or "") .. "/nvim/init.lua")
 end
 
 return M
