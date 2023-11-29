@@ -23,6 +23,12 @@ M.buf_command = function(bufnr, name, fn, opts)
     vim.api.nvim_buf_create_user_command(bufnr, name, fn, opts or {})
 end
 
-M.work_config = dofile(os.getenv("WORK_DIR") .. "/nvim/init.lua")
+M.work_config = nil
+
+local work_config, _ = pcall(dofile(os.getenv("WORK_DIR") .. "/nvim/init.lua"))
+
+if work_config then
+    M.work_config = work_config
+end
 
 return M

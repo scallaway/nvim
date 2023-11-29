@@ -26,7 +26,9 @@ M.setup = function(on_attach, capabilities)
         end,
     }
 
-    table.insert(lsp_setup, utils.work_config.lsp.pyright or {})
+    if utils.work_config then
+        table.insert(lsp_setup, utils.work_config.lsp.pyright or {})
+    end
 
     lspconfig.pyright.setup(lsp_setup)
 end
