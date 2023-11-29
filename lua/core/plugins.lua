@@ -150,6 +150,14 @@ local plugins = {
         },
     },
     "duane9/nvim-rg",
+
+    -- Notes
+    {
+        "preservim/vim-markdown",
+        config = function()
+            require("configs.nvim-markdown")
+        end,
+    },
 }
 
 -- Add any work-related plugins that are required

@@ -4,12 +4,21 @@ if not status_ok then
 end
 
 treesitter.setup({
-    ensure_installed = { "css", "gitcommit", "gitignore", "javascript", "python", "rust", "typescript" },
+    ensure_installed = {
+        "css",
+        "gitcommit",
+        "gitignore",
+        "javascript",
+        "python",
+        "rust",
+        "typescript",
+        "org",
+    },
     sync_install = false,
     auto_install = true,
     highlight = {
         enable = true,
-        additional_vim_regex_highlighting = true,
+        additional_vim_regex_highlighting = false,
     },
     context_commentstring = {
         enable = true,

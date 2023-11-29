@@ -42,10 +42,14 @@ vim.opt.splitright = true
 vim.opt.splitbelow = true
 
 -- Better experience with session plugin
-vim.o.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
+vim.o.sessionoptions =
+    "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
 
 -- Set the default width to be 2 spaces
 vim.opt.shiftwidth = 2
 
 -- Keep the sign column open at all times to prevent code shift with git signs
 vim.opt.signcolumn = "yes"
+
+vim.opt.conceallevel = 2
+
