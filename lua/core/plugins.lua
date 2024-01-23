@@ -161,7 +161,7 @@ local plugins = {
 }
 
 -- Add any work-related plugins that are required
-if utils.work_config ~= nil  then
+if utils.work_config ~= nil then
   table.insert(plugins, utils.work_config.plugins)
 end
 
