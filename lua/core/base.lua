@@ -50,6 +50,3 @@ vim.opt.shiftwidth = 2
 
 -- Keep the sign column open at all times to prevent code shift with git signs
 vim.opt.signcolumn = "yes"
-
-vim.opt.conceallevel = 2
-
