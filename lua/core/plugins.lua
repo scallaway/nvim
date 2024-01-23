@@ -20,6 +20,9 @@ local utils = require("utils")
 local plugins = {
     -- Some defaults
     "tpope/vim-sensible",
+    { "gbprod/cutlass.nvim", opts = {
+        cut_key = "x",
+    } },
 
     -- Utils
     "nvim-lua/plenary.nvim",
@@ -150,6 +153,7 @@ local plugins = {
         },
     },
     "duane9/nvim-rg",
+    "nvim-pack/nvim-spectre",
 
     -- Notes
     {
