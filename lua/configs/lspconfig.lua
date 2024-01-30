@@ -28,7 +28,7 @@ end
 local lsp_formatting = function(bufnr)
   vim.lsp.buf.format({
     filter = function(client)
-      return client.name == "efm"
+      return client.name == "efm" or client.name == "ruff"
     end,
     bufnr = bufnr,
     timeout_ms = 10000,

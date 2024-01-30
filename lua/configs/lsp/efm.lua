@@ -18,6 +18,8 @@ local languages = {
   },
 
   python = {
+    -- require("efmls-configs.formatters.black"),
+    -- require("efmls-configs.formatters.isort"),
     require("efmls-configs.formatters.ruff"),
   },
 
