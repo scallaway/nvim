@@ -18,7 +18,7 @@ local languages = {
   },
 
   python = {
-    require("efmls-configs.linters.flake8"),
+    require("efmls-configs.formatters.ruff"),
   },
 
   html = { format_prettier_d },

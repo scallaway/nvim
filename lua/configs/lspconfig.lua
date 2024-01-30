@@ -112,6 +112,7 @@ for _, server in ipairs({
   "jedi",
   "lua",
   "rust",
+  "ruff",
   "typescript",
   "svelte",
   "vimls",
