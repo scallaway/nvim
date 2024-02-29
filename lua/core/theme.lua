@@ -1,8 +1,10 @@
 -- Use true colors
 vim.o.termguicolors = true
 
-vim.api.nvim_command("colorscheme kanagawa")
 require("kanagawa").setup({
+  functionStyle = {
+    bold = true,
+  },
   colors = {
     theme = {
       all = {
@@ -12,5 +14,9 @@ require("kanagawa").setup({
       },
     },
   },
+  background = {
+    dark = "dragon",
+  },
 })
-require("kanagawa").load("dragon")
+-- vim.api.nvim_command("colorscheme kanagawa")
+vim.cmd("colorscheme kanagawa")

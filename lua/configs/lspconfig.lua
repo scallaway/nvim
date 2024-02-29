@@ -35,7 +35,8 @@ local lsp_formatting = function(bufnr)
   })
 end
 
-local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
+local formatting_group = vim.api.nvim_create_augroup("LspFormatting", {})
+local diagnostics_group = vim.api.nvim_create_augroup("LspDiagnostics", {})
 
 local on_attach = function(client, bufnr)
   -- commands
@@ -58,10 +59,19 @@ local on_attach = function(client, bufnr)
   utils.buf_map(bufnr, "n", "ga", ":LspAct<CR>")
   utils.buf_map(bufnr, "v", "ga", "<Esc><cmd> LspRangeAct<CR>")
 
+  -- Disable diagnostics in node_modules folder
+  vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
+    pattern = { "**/node_modules/**", "node_modules", "/node_modules/*" },
+    callback = function()
+      vim.diagnostic.disable(0)
+    end,
+    group = diagnostics_group,
+  })
+
   if client.supports_method("textDocument/formatting") then
-    vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
+    vim.api.nvim_clear_autocmds({ group = formatting_group, buffer = bufnr })
     vim.api.nvim_create_autocmd("BufWritePre", {
-      group = augroup,
+      group = formatting_group,
       buffer = bufnr,
       callback = function()
         lsp_formatting(bufnr)
@@ -95,6 +105,7 @@ for _, server in ipairs({
   "typescript",
   "svelte",
   "vimls",
+  "marksman",
 }) do
   require("configs.lsp." .. server).setup(on_attach, capabilities)
 end

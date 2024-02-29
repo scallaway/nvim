@@ -43,7 +43,7 @@ vim.opt.splitbelow = true
 
 -- Better experience with session plugin
 vim.o.sessionoptions =
-    "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
+  "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
 
 -- Set the default width to be 2 spaces
 vim.opt.shiftwidth = 2

@@ -33,6 +33,12 @@ local plugins = {
 
   -- Utils
   "nvim-lua/plenary.nvim",
+  {
+    "sQVe/sort.nvim",
+    config = function()
+      require("configs.sort")
+    end,
+  },
 
   -- Language Server installer
   {
@@ -83,7 +89,6 @@ local plugins = {
   },
 
   -- Utils
-  -- "nvim-lua/plenary.nvim",
   {
     "creativenull/efmls-configs-nvim",
     dependencies = { "neovim/nvim-lspconfig" },
@@ -143,7 +148,12 @@ local plugins = {
       require("configs.fugitive")
     end,
   },
-  "airblade/vim-gitgutter",
+  {
+    "lewis6991/gitsigns.nvim",
+    config = function()
+      require("configs.gitsigns")
+    end,
+  },
 
   -- Searching
   {
@@ -160,15 +170,13 @@ local plugins = {
     },
   },
   "duane9/nvim-rg",
-  "nvim-pack/nvim-spectre",
-
-  -- Notes
   {
-    "preservim/vim-markdown",
+    "nvim-pack/nvim-spectre",
     config = function()
-      require("configs.nvim-markdown")
+      require("configs.spectre")
     end,
   },
+  "kevinhwang91/nvim-bqf",
 }
 
 -- Add any work-related plugins that are required
