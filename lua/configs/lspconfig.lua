@@ -106,6 +106,7 @@ for _, server in ipairs({
   "svelte",
   "vimls",
   "marksman",
+  "nil-ls",
 }) do
   require("configs.lsp." .. server).setup(on_attach, capabilities)
 end
