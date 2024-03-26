@@ -115,6 +115,19 @@ local plugins = {
       require("configs.web-devicons")
     end,
   },
+  {
+    "nvim-lualine/lualine.nvim",
+    dependencies = { "nvim-tree/nvim-web-devicons" },
+    config = function()
+      require("configs.lualine")
+    end,
+  },
+  {
+    "linrongbin16/lsp-progress.nvim",
+    config = function()
+      require("configs.lsp-progress")
+    end,
+  },
 
   -- Code
   {
@@ -177,6 +190,7 @@ local plugins = {
     end,
   },
   "kevinhwang91/nvim-bqf",
+  "tpope/vim-abolish",
 }
 
 -- Add any work-related plugins that are required
