@@ -5,6 +5,7 @@ end
 
 lualine.setup({
   sections = {
+    lualine_b = { "diff", "diagnostics" },
     lualine_c = {
       "filename",
       -- Show LSP progress

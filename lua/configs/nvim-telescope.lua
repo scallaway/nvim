@@ -19,7 +19,7 @@ vim.keymap.set("n", "<C-b>", function()
 end)
 vim.keymap.set("n", "<C-s>", function()
   -- Use Ctrl-S to search through the current buffer symbols
-  require("telescope.builtin").lsp_workspace_symbols()
+  require("telescope.builtin").lsp_dynamic_workspace_symbols()
 end)
 
 telescope.setup({
