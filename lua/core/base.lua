@@ -2,7 +2,10 @@
 vim.opt.colorcolumn = "80"
 
 -- Highlight the current line
--- vim.opt.cursorline = true
+vim.opt.cursorline = true
+vim.opt.cursorlineopt = "number"
+
+vim.opt.number = true
 
 -- Enable mouse support
 vim.opt.mouse = "a"
