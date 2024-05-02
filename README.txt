@@ -20,10 +20,6 @@ Current startup times (tested with Hyperfine):
 
   ❯ hyperfine "nvim --headless +qa"
 
-    Benchmark 1: nvim --headless +qa
-      Time (mean ± σ):      35.0 ms ±   1.4 ms    [User: 25.9 ms, System: 9.1 ms]
-      Range (min … max):    32.4 ms …  40.0 ms    81 runs
-
-There's more work to be done here in terms of startup time, but that involves a
-lot of "lazy" configuration and, to be honest, 37ms of startup is really not
-that bad.
+  Benchmark 1: nvim --headless +qa
+    Time (mean ± σ):     191.5 ms ±  38.8 ms    [User: 157.7 ms, System: 27.7 ms]
+    Range (min … max):   141.6 ms … 283.3 ms    20 runs
