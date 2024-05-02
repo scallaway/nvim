@@ -153,6 +153,13 @@ local plugins = {
       require("configs.comment")
     end,
   },
+  {
+    "MeanderingProgrammer/markdown.nvim",
+    config = function()
+      require("configs.markdown")
+    end,
+    dependencies = { "nvim-treesitter/nvim-treesitter" },
+  },
 
   -- Git
   {
