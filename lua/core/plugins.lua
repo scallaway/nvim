@@ -39,6 +39,7 @@ local plugins = {
       require("configs.sort")
     end,
   },
+  { "rcarriga/nvim-notify" },
 
   -- Language Server installer
   {
@@ -161,6 +162,13 @@ local plugins = {
       require("configs.markdown")
     end,
     dependencies = { "nvim-treesitter/nvim-treesitter" },
+  },
+  {
+    "folke/trouble.nvim",
+    dependencies = { "nvim-tree/nvim-web-devicons" },
+    config = function()
+      require("configs.trouble")
+    end,
   },
 
   -- Git
