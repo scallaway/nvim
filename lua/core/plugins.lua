@@ -33,13 +33,20 @@ local plugins = {
 
   -- Utils
   "nvim-lua/plenary.nvim",
-  {
+{
     "sQVe/sort.nvim",
     config = function()
       require("configs.sort")
     end,
   },
   { "rcarriga/nvim-notify" },
+  {
+    "stevearc/conform.nvim",
+    opts = {},
+    config = function()
+      require("configs.conform")
+    end,
+  },
 
   -- Language Server installer
   {
