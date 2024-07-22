@@ -9,29 +9,24 @@ conform.setup({
     python = { "ruff" },
     rust = { "rustfmt" },
     svelte = {
-      "eslint",
       "prettierd",
-      stop_after_first = true,
+      "eslint_d",
     },
     javascript = {
-      "eslint",
       "prettierd",
-      stop_after_first = true,
+      "eslint_d",
     },
     typescript = {
-      "eslint",
       "prettierd",
-      stop_after_first = true,
+      "eslint_d",
     },
     javascriptreact = {
-      "eslint",
       "prettierd",
-      stop_after_first = true,
+      "eslint_d",
     },
     typescriptreact = {
-      "eslint",
       "prettierd",
-      stop_after_first = true,
+      "eslint_d",
     },
     html = {
       "prettierd",
