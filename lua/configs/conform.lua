@@ -10,23 +10,23 @@ conform.setup({
     rust = { "rustfmt" },
     svelte = {
       "prettierd",
-      "eslint_d",
+      "eslint",
     },
     javascript = {
       "prettierd",
-      "eslint_d",
+      "eslint",
     },
     typescript = {
       "prettierd",
-      "eslint_d",
+      "eslint",
     },
     javascriptreact = {
       "prettierd",
-      "eslint_d",
+      "eslint",
     },
     typescriptreact = {
       "prettierd",
-      "eslint_d",
+      "eslint",
     },
     html = {
       "prettierd",
