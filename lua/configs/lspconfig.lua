@@ -59,6 +59,8 @@ local on_attach = function(client, bufnr)
   utils.buf_map(bufnr, "n", "ga", ":LspAct<CR>")
   utils.buf_map(bufnr, "v", "ga", "<Esc><cmd> LspRangeAct<CR>")
 
+  utils.buf_map(bufnr, "n", "gL", ":vsp<CR>:LspDef<CR>")
+
   -- Disable diagnostics in node_modules folder
   vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
     pattern = { "**/node_modules/**", "node_modules", "/node_modules/*" },
@@ -79,13 +81,12 @@ local on_attach = function(client, bufnr)
     -- })
   end
 
-
   --   vim.api.nvim_create_autocmd("BufWritePre", {
   -- pattern = "*",
   -- callback = function(args)
   --   require("conform").format({ bufnr = args.buf })
   -- end,
--- })
+  -- })
 end
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
@@ -100,6 +101,7 @@ vim.diagnostic.config({
 })
 
 for _, server in ipairs({
+  "angular",
   "bash",
   "clangd",
   "docker",
