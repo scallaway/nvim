@@ -33,7 +33,7 @@ local plugins = {
 
   -- Utils
   "nvim-lua/plenary.nvim",
-{
+  {
     "sQVe/sort.nvim",
     config = function()
       require("configs.sort")
@@ -95,6 +95,12 @@ local plugins = {
     "onsails/lspkind.nvim",
     config = function()
       require("configs.lspkind")
+    end,
+  },
+  {
+    "zbirenbaum/copilot.lua",
+    config = function()
+      require("configs.copilot")
     end,
   },
 
