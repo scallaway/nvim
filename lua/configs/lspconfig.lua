@@ -101,7 +101,7 @@ vim.diagnostic.config({
 })
 
 for _, server in ipairs({
-  "angular",
+  -- "angular",
   "bash",
   "clangd",
   "docker",
