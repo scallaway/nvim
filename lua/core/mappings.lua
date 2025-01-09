@@ -20,3 +20,4 @@ vim.api.nvim_create_user_command("Sp", "sp", {})
 
 -- Ctrl + backspace to delete word
 vim.keymap.set("i", "<C-h>", "<C-w>")
+vim.keymap.set("i", "<C-BS>", "<C-w>") -- Unfortunately we have a clash so need to be specific
