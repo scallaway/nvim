@@ -47,6 +47,7 @@ local plugins = {
       require("configs.conform")
     end,
   },
+  "gelguy/wilder.nvim",
 
   -- Language Server installer
   {
@@ -83,7 +84,6 @@ local plugins = {
       require("configs.cmp")
     end,
   },
-  -- "L3MON4D3/LuaSnip",
   "hrsh7th/cmp-nvim-lsp",
   "hrsh7th/cmp-buffer",
   "hrsh7th/cmp-path",
@@ -159,6 +159,10 @@ local plugins = {
     dependencies = { "nvim-treesitter/nvim-treesitter" },
   },
   {
+    "RRethy/nvim-treesitter-textsubjects",
+    dependencies = { "nvim-treesitter/nvim-treesitter" },
+  },
+  {
     "folke/todo-comments.nvim",
     config = function()
       require("configs.todo-comments")
@@ -176,13 +180,6 @@ local plugins = {
       require("configs.markdown")
     end,
     dependencies = { "nvim-treesitter/nvim-treesitter" },
-  },
-  {
-    "folke/trouble.nvim",
-    dependencies = { "nvim-tree/nvim-web-devicons" },
-    config = function()
-      require("configs.trouble")
-    end,
   },
 
   -- Git
