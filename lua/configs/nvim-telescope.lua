@@ -9,10 +9,15 @@ vim.keymap.set("n", "<C-p>", function()
   -- Use Ctrl+P to search through file names
   require("telescope.builtin").find_files()
 end)
-vim.keymap.set("n", "<C-f>", function()
-  -- Use Ctrl-F to ripgrep through files
-  require("telescope.builtin").live_grep()
-end)
+vim.keymap.set(
+  "n",
+  "<C-f>",
+  ":lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>"
+  -- function()
+  --   -- Use Ctrl-F to ripgrep through files
+  --   require("telescope.builtin").live_grep()
+  --end
+)
 vim.keymap.set("n", "<C-b>", function()
   -- Use Ctrl-B to search through buffers
   require("telescope.builtin").buffers()
@@ -65,4 +70,7 @@ telescope.setup({
   },
 })
 
-require("telescope").load_extension("fzf")
+telescope.load_extension("fzf")
+telescope.load_extension("live_grep_args")
+
+vim.keymap.set("n", "<leader>fg", "")

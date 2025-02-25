@@ -80,13 +80,6 @@ local on_attach = function(client, bufnr)
     --   end,
     -- })
   end
-
-  --   vim.api.nvim_create_autocmd("BufWritePre", {
-  -- pattern = "*",
-  -- callback = function(args)
-  --   require("conform").format({ bufnr = args.buf })
-  -- end,
-  -- })
 end
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
@@ -106,6 +99,7 @@ for _, server in ipairs({
   "clangd",
   "docker",
   "efm",
+  "eslint",
   "go",
   "intelephense",
   "pyright",

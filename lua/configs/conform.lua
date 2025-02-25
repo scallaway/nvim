@@ -6,29 +6,32 @@ end
 conform.setup({
   formatters_by_ft = {
     lua = { "stylua" },
-    python = { "ruff" },
+    python = { "ruff_format" },
     rust = { "rustfmt" },
     svelte = {
       "prettierd",
-      "eslint",
+      "eslint-lsp",
     },
     javascript = {
       "prettierd",
-      "eslint",
+      "eslint-lsp",
     },
     typescript = {
       "prettierd",
-      "eslint",
+      "eslint-lsp",
     },
     javascriptreact = {
       "prettierd",
-      "eslint",
+      "eslint-lsp",
     },
     typescriptreact = {
       "prettierd",
-      "eslint",
+      "eslint-lsp",
     },
     html = {
+      "prettierd",
+    },
+    json = {
       "prettierd",
     },
   },

@@ -8,6 +8,9 @@ require("catppuccin").setup({
     functions = {
       "bold",
     },
+    strings = {
+      "italic",
+    },
   },
 })
 

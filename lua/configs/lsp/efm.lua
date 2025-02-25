@@ -5,13 +5,6 @@ end
 
 local M = {}
 
--- It's sad that we can't just store "formatters" and "linters" under variables
--- from require("efmls-configs.formatters.*") and
--- require("efmls-configs.linters.*")
-
-local format_prettier_d = require("efmls-configs.formatters.prettier_d")
-local lint_eslint_d = require("efmls-configs.linters.eslint_d")
-
 local languages = {
   lua = {
     require("efmls-configs.linters.luacheck"),
@@ -19,22 +12,6 @@ local languages = {
 
   python = {
     require("efmls-configs.linters.flake8"),
-  },
-
-  html = { format_prettier_d },
-
-  javascript = {
-    -- format_eslint_d,
-    lint_eslint_d,
-  },
-  javascriptreact = {
-    lint_eslint_d,
-  },
-  typescript = {
-    lint_eslint_d,
-  },
-  typescriptreact = {
-    lint_eslint_d,
   },
 }
 

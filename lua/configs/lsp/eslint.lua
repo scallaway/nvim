@@ -6,9 +6,14 @@ end
 local M = {}
 
 M.setup = function(on_attach, capabilities)
-  lspconfig.rust_analyzer.setup({
+  lspconfig.eslint.setup({
     on_attach = on_attach,
     capabilities = capabilities,
+    settings = {
+      experimental = {
+        useFlatConfig = false,
+      },
+    },
   })
 end
 
