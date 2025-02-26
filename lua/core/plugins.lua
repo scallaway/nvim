@@ -79,24 +79,14 @@ local plugins = {
 
   -- Autocompletion
   {
-    "hrsh7th/nvim-cmp",
+    "Saghen/blink.cmp",
     config = function()
-      require("configs.cmp")
+      require("configs.blink-cmp")
     end,
+    dependencies = "rafamadriz/friendly-snippets",
+    version = "*",
   },
-  "hrsh7th/cmp-nvim-lsp",
-  "hrsh7th/cmp-buffer",
-  "hrsh7th/cmp-path",
-  "hrsh7th/cmp-cmdline",
-  "hrsh7th/cmp-nvim-lua",
-  "petertriho/cmp-git",
-  "saadparwaiz1/cmp_luasnip",
-  {
-    "onsails/lspkind.nvim",
-    config = function()
-      require("configs.lspkind")
-    end,
-  },
+  "echasnovski/mini.icons",
   {
     "zbirenbaum/copilot.lua",
     config = function()

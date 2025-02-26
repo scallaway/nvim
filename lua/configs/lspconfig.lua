@@ -15,26 +15,6 @@ mason.setup({
   },
 })
 
-local lsp_status_ok, _ = pcall(require, "lspconfig")
-if not lsp_status_ok then
-  return
-end
-
-local cmp_status_ok, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
-if not cmp_status_ok then
-  return
-end
-
-local lsp_formatting = function(bufnr)
-  vim.lsp.buf.format({
-    filter = function(client)
-      return client.name == "efm"
-    end,
-    bufnr = bufnr,
-    timeout_ms = 10000,
-  })
-end
-
 local formatting_group = vim.api.nvim_create_augroup("LspFormatting", {})
 local diagnostics_group = vim.api.nvim_create_augroup("LspDiagnostics", {})
 
@@ -82,9 +62,6 @@ local on_attach = function(client, bufnr)
   end
 end
 
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities = cmp_nvim_lsp.default_capabilities(capabilities)
-
 vim.diagnostic.config({
   -- Don't show the signs in the gutter (to prevent code moving left and right)
   signs = false,
@@ -112,5 +89,5 @@ for _, server in ipairs({
   "nil-ls",
   "csharp",
 }) do
-  require("configs.lsp." .. server).setup(on_attach, capabilities)
+  require("configs.lsp." .. server).setup(on_attach)
 end
