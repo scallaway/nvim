@@ -63,7 +63,6 @@ local plugins = {
     config = function()
       require("configs.mason")
     end,
-    lazy = true,
   },
   {
     "williamboman/mason-lspconfig.nvim",
@@ -73,7 +72,6 @@ local plugins = {
     config = function()
       require("configs.mason-lspconfig")
     end,
-    lazy = true,
   },
 
   -- LSP
