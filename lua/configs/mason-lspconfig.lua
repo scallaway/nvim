@@ -1,8 +1,18 @@
 local status_ok, mason_lspconfig = pcall(require, "mason-lspconfig")
 if not status_ok then
-    return
+  return
 end
 
 mason_lspconfig.setup({
-    automatic_installation = true,
+  ensure_installed = {
+    "lua_ls",
+    "ts_ls",
+    "pyright",
+    "rust_analyzer",
+    -- "prettier",
+    "eslint",
+    "efm",
+    -- "stylua",
+  },
+  automatic_installation = true,
 })

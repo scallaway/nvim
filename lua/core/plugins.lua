@@ -108,6 +108,7 @@ local plugins = {
   },
   {
     "stevearc/oil.nvim",
+    event = "VeryLazy",
     config = function()
       require("configs.oil")
     end,
@@ -118,6 +119,7 @@ local plugins = {
   { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
   {
     "nvim-tree/nvim-web-devicons",
+    event = "VeryLazy",
     config = function()
       require("configs.web-devicons")
     end,
@@ -154,18 +156,21 @@ local plugins = {
   },
   {
     "folke/todo-comments.nvim",
+    event = "VeryLazy",
     config = function()
       require("configs.todo-comments")
     end,
   },
   {
     "numToStr/Comment.nvim",
+    event = "VeryLazy",
     config = function()
       require("configs.comment")
     end,
   },
   {
     "MeanderingProgrammer/markdown.nvim",
+    event = "VeryLazy",
     config = function()
       require("configs.markdown")
     end,

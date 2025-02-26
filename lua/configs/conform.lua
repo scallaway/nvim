@@ -5,6 +5,8 @@ end
 
 conform.setup({
   formatters_by_ft = {
+    ["*"] = { "codespell" },
+    ["_"] = { "trim_whitespace" },
     lua = { "stylua" },
     python = { "ruff_format" },
     rust = { "rustfmt" },

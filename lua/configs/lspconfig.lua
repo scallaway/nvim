@@ -1,20 +1,5 @@
 local utils = require("utils")
 
-local mason_status_ok, mason = pcall(require, "mason")
-if not mason_status_ok then
-  return
-end
-
-mason.setup({
-  ui = {
-    icons = {
-      package_installed = "✓",
-      package_uninstalled = "✗",
-      package_pending = "⟳",
-    },
-  },
-})
-
 local formatting_group = vim.api.nvim_create_augroup("LspFormatting", {})
 local diagnostics_group = vim.api.nvim_create_augroup("LspDiagnostics", {})
 
@@ -49,25 +34,15 @@ local on_attach = function(client, bufnr)
     end,
     group = diagnostics_group,
   })
-
-  if client.supports_method("textDocument/formatting") then
-    vim.api.nvim_clear_autocmds({ group = formatting_group, buffer = bufnr })
-    -- vim.api.nvim_create_autocmd("BufWritePre", {
-    --   group = formatting_group,
-    --   buffer = bufnr,
-    --   callback = function()
-    --     lsp_formatting(bufnr)
-    --   end,
-    -- })
-  end
+  --
+  -- if client.supports_method("textDocument/formatting") then
+  --   vim.api.nvim_clear_autocmds({ group = formatting_group, buffer = bufnr })
+  -- end
 end
 
 vim.diagnostic.config({
   -- Don't show the signs in the gutter (to prevent code moving left and right)
   signs = false,
-
-  -- Update the warnings in real time if possible
-  update_in_insert = true,
 })
 
 for _, server in ipairs({
