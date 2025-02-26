@@ -48,6 +48,14 @@ local plugins = {
     end,
   },
   "gelguy/wilder.nvim",
+  {
+    "folke/snacks.nvim",
+    priority = 1000,
+    lazy = false,
+    config = function()
+      require("configs.snacks")
+    end,
+  },
 
   -- Language Server installer
   {
@@ -123,6 +131,7 @@ local plugins = {
     config = function()
       require("configs.web-devicons")
     end,
+    lazy = "VeryLazy",
   },
   {
     "nvim-lualine/lualine.nvim",
@@ -145,14 +154,17 @@ local plugins = {
     config = function()
       require("configs.nvim-treesitter")
     end,
+    lazy = "VeryLazy",
   },
   {
     "nvim-treesitter/nvim-treesitter-textobjects",
     dependencies = { "nvim-treesitter/nvim-treesitter" },
+    lazy = "VeryLazy",
   },
   {
     "RRethy/nvim-treesitter-textsubjects",
     dependencies = { "nvim-treesitter/nvim-treesitter" },
+    lazy = "VeryLazy",
   },
   {
     "folke/todo-comments.nvim",
@@ -160,6 +172,7 @@ local plugins = {
     config = function()
       require("configs.todo-comments")
     end,
+    lazy = "VeryLazy",
   },
   {
     "numToStr/Comment.nvim",
@@ -167,6 +180,7 @@ local plugins = {
     config = function()
       require("configs.comment")
     end,
+    lazy = "VeryLazy",
   },
   {
     "MeanderingProgrammer/markdown.nvim",
@@ -183,6 +197,7 @@ local plugins = {
     config = function()
       require("configs.fugitive")
     end,
+    lazy = "VeryLazy",
   },
   {
     "lewis6991/gitsigns.nvim",
@@ -213,14 +228,15 @@ local plugins = {
       "nvim-telescope/telescope.nvim",
     },
   },
-  "duane9/nvim-rg",
+  { "duane9/nvim-rg", lazy = "VeryLazy" },
   {
     "nvim-pack/nvim-spectre",
     config = function()
       require("configs.spectre")
     end,
+    lazy = "VeryLazy",
   },
-  "kevinhwang91/nvim-bqf",
+  { "kevinhwang91/nvim-bqf", lazy = "VeryLazy" },
   "tpope/vim-abolish",
 }
 
