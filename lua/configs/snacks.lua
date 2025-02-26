@@ -11,6 +11,7 @@ snacks.setup({
   bigfile = { enabled = true },
   dashboard = { enabled = false },
   explorer = { enabled = true },
+  git = { enabled = false },
   indent = { enabled = false },
   input = { enabled = false },
   picker = { enabled = false },

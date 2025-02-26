@@ -117,7 +117,6 @@ local plugins = {
   },
   {
     "stevearc/oil.nvim",
-    lazy = true,
     config = function()
       require("configs.oil")
     end,
@@ -195,7 +194,7 @@ local plugins = {
     config = function()
       require("configs.fugitive")
     end,
-    lazy = "VeryLazy",
+    lazy = true,
   },
   {
     "lewis6991/gitsigns.nvim",

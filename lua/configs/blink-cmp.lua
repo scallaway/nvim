@@ -5,7 +5,7 @@ end
 
 blink_cmp.setup({
   keymap = {
-    preset = "super-tab",
+    preset = "enter",
   },
   completion = {
     menu = {
@@ -27,6 +27,14 @@ blink_cmp.setup({
         },
       },
     },
+    list = {
+      selection = {
+        preselect = function(ctx)
+          return ctx.mode ~= "cmdline"
+        end,
+        auto_insert = true,
+      },
+    },
   },
   sources = {
     providers = {
@@ -41,4 +49,5 @@ blink_cmp.setup({
       },
     },
   },
+  signature = { enabled = true },
 })
