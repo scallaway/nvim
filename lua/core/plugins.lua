@@ -38,8 +38,8 @@ local plugins = {
     config = function()
       require("configs.sort")
     end,
+    lazy = true,
   },
-  { "rcarriga/nvim-notify" },
   {
     "stevearc/conform.nvim",
     opts = {},
@@ -63,6 +63,7 @@ local plugins = {
     config = function()
       require("configs.mason")
     end,
+    lazy = true,
   },
   {
     "williamboman/mason-lspconfig.nvim",
@@ -72,6 +73,7 @@ local plugins = {
     config = function()
       require("configs.mason-lspconfig")
     end,
+    lazy = true,
   },
 
   -- LSP
@@ -83,6 +85,7 @@ local plugins = {
     opts = {
       format = { timeout_ms = 10000 },
     },
+    lazy = true,
   },
 
   -- Autocompletion
@@ -109,14 +112,14 @@ local plugins = {
   },
   {
     "kylechui/nvim-surround",
-    event = "VeryLazy",
+    lazy = true,
     config = function()
       require("configs.surround")
     end,
   },
   {
     "stevearc/oil.nvim",
-    event = "VeryLazy",
+    lazy = true,
     config = function()
       require("configs.oil")
     end,
@@ -127,11 +130,10 @@ local plugins = {
   { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
   {
     "nvim-tree/nvim-web-devicons",
-    event = "VeryLazy",
+    lazy = true,
     config = function()
       require("configs.web-devicons")
     end,
-    lazy = "VeryLazy",
   },
   {
     "nvim-lualine/lualine.nvim",
@@ -168,23 +170,21 @@ local plugins = {
   },
   {
     "folke/todo-comments.nvim",
-    event = "VeryLazy",
+    lazy = true,
     config = function()
       require("configs.todo-comments")
     end,
-    lazy = "VeryLazy",
   },
   {
     "numToStr/Comment.nvim",
-    event = "VeryLazy",
+    lazy = true,
     config = function()
       require("configs.comment")
     end,
-    lazy = "VeryLazy",
   },
   {
     "MeanderingProgrammer/markdown.nvim",
-    event = "VeryLazy",
+    lazy = true,
     config = function()
       require("configs.markdown")
     end,
