@@ -38,7 +38,6 @@ local plugins = {
     config = function()
       require("configs.sort")
     end,
-    lazy = true,
   },
   {
     "stevearc/conform.nvim",
@@ -83,7 +82,6 @@ local plugins = {
     opts = {
       format = { timeout_ms = 10000 },
     },
-    lazy = true,
   },
 
   -- Autocompletion
@@ -110,7 +108,7 @@ local plugins = {
   },
   {
     "kylechui/nvim-surround",
-    lazy = true,
+
     config = function()
       require("configs.surround")
     end,
@@ -127,7 +125,7 @@ local plugins = {
   { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
   {
     "nvim-tree/nvim-web-devicons",
-    lazy = true,
+
     config = function()
       require("configs.web-devicons")
     end,
@@ -153,35 +151,32 @@ local plugins = {
     config = function()
       require("configs.nvim-treesitter")
     end,
-    lazy = "VeryLazy",
   },
   {
     "nvim-treesitter/nvim-treesitter-textobjects",
     dependencies = { "nvim-treesitter/nvim-treesitter" },
-    lazy = "VeryLazy",
   },
   {
     "RRethy/nvim-treesitter-textsubjects",
     dependencies = { "nvim-treesitter/nvim-treesitter" },
-    lazy = "VeryLazy",
   },
   {
     "folke/todo-comments.nvim",
-    lazy = true,
+
     config = function()
       require("configs.todo-comments")
     end,
   },
   {
     "numToStr/Comment.nvim",
-    lazy = true,
+
     config = function()
       require("configs.comment")
     end,
   },
   {
     "MeanderingProgrammer/markdown.nvim",
-    lazy = true,
+
     config = function()
       require("configs.markdown")
     end,
@@ -194,7 +189,6 @@ local plugins = {
     config = function()
       require("configs.fugitive")
     end,
-    lazy = true,
   },
   {
     "lewis6991/gitsigns.nvim",
@@ -225,15 +219,14 @@ local plugins = {
       "nvim-telescope/telescope.nvim",
     },
   },
-  { "duane9/nvim-rg", lazy = "VeryLazy" },
+  "duane9/nvim-rg",
   {
     "nvim-pack/nvim-spectre",
     config = function()
       require("configs.spectre")
     end,
-    lazy = "VeryLazy",
   },
-  { "kevinhwang91/nvim-bqf", lazy = "VeryLazy" },
+  "kevinhwang91/nvim-bqf",
   "tpope/vim-abolish",
 }
 
