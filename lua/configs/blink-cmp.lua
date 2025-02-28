@@ -5,7 +5,8 @@ end
 
 blink_cmp.setup({
   keymap = {
-    preset = "enter",
+    preset = "super-tab",
+    ["<C-k>"] = {},
   },
   completion = {
     menu = {

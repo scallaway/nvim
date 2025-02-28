@@ -10,15 +10,43 @@ snacks.setup({
   animate = { enabled = false },
   bigfile = { enabled = true },
   dashboard = { enabled = false },
-  explorer = { enabled = true },
+  explorer = { enabled = false },
   git = { enabled = false },
-  indent = { enabled = false },
+  indent = {
+    enabled = false,
+    only_scope = true, -- only show indent guides of the scope
+    only_current = true, -- only show indent guides in the current window
+    animate = {
+      enabled = false,
+    },
+  },
   input = { enabled = false },
   picker = { enabled = false },
   notifier = { enabled = true },
-  quickfile = { enabled = false },
+  quickfile = { enabled = true },
   scope = { enabled = false },
   scroll = { enabled = false },
-  statuscolumn = { enabled = false },
   words = { enabled = true },
+  statuscolumn = {
+    -- This doesn't seem to work properly
+    enabled = false,
+    -- {
+    --   left = { "mark", "sign" }, -- priority of signs on the left (high to low)
+    --   right = { "fold", "git" }, -- priority of signs on the right (high to low)
+    --   folds = {
+    --     open = false, -- show open fold icons
+    --     git_hl = false, -- use Git Signs hl for fold icons
+    --   },
+    --   git = {
+    --     -- patterns to match Git signs
+    --     patterns = { "GitSign", "MiniDiffSign" },
+    --   },
+    --   refresh = 50, -- refresh at most every 50ms
+    -- },
+  },
+  styles = {
+    notification = {
+      wo = { wrap = true }, -- Wrap notifications
+    },
+  },
 })

@@ -9,7 +9,7 @@ lualine.setup({
   },
   sections = {
     lualine_a = { "mode" },
-    lualine_b = { "searchcount", "diff", "diagnostics" },
+    lualine_b = { "diff", "diagnostics" },
     lualine_c = {
       {
         "filename",
@@ -17,11 +17,10 @@ lualine.setup({
         newfile_status = true, -- Display new file status (new file means no write after created)
         path = 1,
       },
-      -- "filename",
       -- Show LSP progress
       require("lsp-progress").progress,
     },
-    lualine_x = { "filetype", "filesize" },
+    lualine_x = { "copilot", "filetype", "filesize" },
     lualine_y = {},
     lualine_z = { "location" },
   },

@@ -121,7 +121,6 @@ local plugins = {
   },
 
   -- Customisation
-  -- "rebelot/kanagawa.nvim",
   { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
   {
     "nvim-tree/nvim-web-devicons",
@@ -143,6 +142,7 @@ local plugins = {
       require("configs.lsp-progress")
     end,
   },
+  { "AndreM222/copilot-lualine" },
 
   -- Code
   {
@@ -181,6 +181,12 @@ local plugins = {
       require("configs.markdown")
     end,
     dependencies = { "nvim-treesitter/nvim-treesitter" },
+  },
+  {
+    "folke/trouble.nvim",
+    config = function()
+      require("configs.trouble")
+    end,
   },
 
   -- Git
