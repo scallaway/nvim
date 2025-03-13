@@ -29,9 +29,6 @@ vim.opt.writebackup = false
 -- Connection to the system clipboard
 vim.opt.clipboard = "unnamedplus"
 
--- Options for insert mode completion
-vim.opt.completeopt = { "menu", "menuone", "noselect" }
-
 -- Reduce the updatetime of vim
 vim.opt.updatetime = 100
 
@@ -40,14 +37,8 @@ vim.opt.wrap = false
 
 vim.g.mapleader = " "
 
-vim.opt.guicursor = ""
-
 vim.opt.splitright = true
 vim.opt.splitbelow = true
-
--- Better experience with session plugin
-vim.o.sessionoptions =
-  "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
 
 -- Set the default width to be 2 spaces
 vim.opt.shiftwidth = 2
