@@ -5,7 +5,9 @@ end
 
 blink_cmp.setup({
   keymap = {
-    preset = "super-tab",
+    preset = "enter",
+    ["<Tab>"] = { "select_next", "fallback" },
+    ["<S-Tab>"] = { "select_prev", "fallback" },
     ["<C-k>"] = {},
   },
   completion = {
