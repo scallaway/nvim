@@ -40,6 +40,7 @@ blink_cmp.setup({
     },
   },
   sources = {
+    default = { "lsp", "path", "snippets", "buffer" },
     providers = {
       buffer = {
         opts = {

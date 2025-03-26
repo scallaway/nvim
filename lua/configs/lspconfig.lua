@@ -1,9 +1,8 @@
 local utils = require("utils")
 
-local formatting_group = vim.api.nvim_create_augroup("LspFormatting", {})
 local diagnostics_group = vim.api.nvim_create_augroup("LspDiagnostics", {})
 
-local on_attach = function(client, bufnr)
+local on_attach = function(_, bufnr)
   -- commands
   utils.buf_command(bufnr, "LspHover", vim.lsp.buf.hover)
   utils.buf_command(bufnr, "LspDiagPrev", vim.diagnostic.goto_prev)
@@ -34,16 +33,9 @@ local on_attach = function(client, bufnr)
     end,
     group = diagnostics_group,
   })
-  --
-  -- if client.supports_method("textDocument/formatting") then
-  --   vim.api.nvim_clear_autocmds({ group = formatting_group, buffer = bufnr })
-  -- end
 end
 
-vim.diagnostic.config({
-  -- Don't show the signs in the gutter (to prevent code moving left and right)
-  signs = false,
-})
+local capabilities = require("blink.cmp").get_lsp_capabilities()
 
 for _, server in ipairs({
   -- "angular",
@@ -64,5 +56,5 @@ for _, server in ipairs({
   "nil-ls",
   "csharp",
 }) do
-  require("configs.lsp." .. server).setup(on_attach)
+  require("configs.lsp." .. server).setup(on_attach, capabilities)
 end
