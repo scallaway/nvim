@@ -1,7 +1,5 @@
 local utils = require("utils")
 
-local diagnostics_group = vim.api.nvim_create_augroup("LspDiagnostics", {})
-
 local on_attach = function(_, bufnr)
   -- commands
   utils.buf_command(bufnr, "LspHover", vim.lsp.buf.hover)
@@ -24,15 +22,6 @@ local on_attach = function(_, bufnr)
   utils.buf_map(bufnr, "v", "ga", "<Esc><cmd> LspRangeAct<CR>")
 
   utils.buf_map(bufnr, "n", "gL", ":vsp<CR>:LspDef<CR>")
-
-  -- Disable diagnostics in node_modules folder
-  vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
-    pattern = { "**/node_modules/**", "node_modules", "/node_modules/*" },
-    callback = function()
-      vim.diagnostic.disable(0)
-    end,
-    group = diagnostics_group,
-  })
 end
 
 local capabilities = require("blink.cmp").get_lsp_capabilities()
@@ -55,6 +44,8 @@ for _, server in ipairs({
   "vimls",
   "nil-ls",
   "csharp",
+  -- "oxlint",
+  "biome",
 }) do
   require("configs.lsp." .. server).setup(on_attach, capabilities)
 end

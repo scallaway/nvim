@@ -36,6 +36,9 @@ conform.setup({
     json = {
       "prettierd",
     },
+    jsonc = {
+      "prettierd",
+    },
   },
   notify_on_error = true,
 })

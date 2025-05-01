@@ -1,0 +1,28 @@
+nvim
+
+===
+
+This is my current (and constantly in-progress) configuration that I use on a
+daily basis.
+
+---
+
+Requirements:
+  - Neovim 0.11 (https://github.com/neovim/neovim), although I build from
+    source because I like to live dangerously
+
+  - Tested and working as of:
+
+      NVIM v0.11.0-dev-1834+g56fabcadb6
+
+---
+
+Lazy.nvim profile output:
+
+  Startuptime: 74.12ms
+
+  Based on the actual CPU time of the Neovim process till UIEnter.
+  This is more accurate than `nvim --startuptime`.
+    LazyStart 3.69ms
+    LazyDone  59.48ms (+55.8ms)
+    UIEnter   74.12ms (+14.63ms)

@@ -6,7 +6,7 @@ end
 local M = {}
 
 M.setup = function(on_attach, capabilities)
-  lspconfig.bashls.setup({
+  lspconfig.biome.setup({
     on_attach = on_attach,
     capabilities = capabilities,
     settings = {

@@ -22,5 +22,6 @@ copilot.setup({
     vimwiki = false,
     markdown = false,
     telekasten = false,
+    gitcommit = false,
   },
 })

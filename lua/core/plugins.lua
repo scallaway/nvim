@@ -100,6 +100,10 @@ local plugins = {
       require("configs.copilot")
     end,
   },
+  {
+    "soulsam480/nvim-oxlint",
+    opts = {},
+  },
 
   -- Utils
   {
@@ -186,6 +190,15 @@ local plugins = {
     "folke/trouble.nvim",
     config = function()
       require("configs.trouble")
+    end,
+  },
+  {
+    "Sebastian-Nielsen/better-type-hover",
+    ft = { "typescript", "typescriptreact" },
+    config = function()
+      require("better-type-hover").setup({
+        openTypeDocKeymap = "<C-K>",
+      })
     end,
   },
 
