@@ -77,7 +77,7 @@ local plugins = {
   {
     "neovim/nvim-lspconfig",
     config = function()
-      require("configs.lspconfig")
+      require("configs.lsp.setup")
     end,
     opts = {
       format = { timeout_ms = 10000 },

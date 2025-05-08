@@ -24,28 +24,7 @@ local on_attach = function(_, bufnr)
   utils.buf_map(bufnr, "n", "gL", ":vsp<CR>:LspDef<CR>")
 end
 
-local capabilities = require("blink.cmp").get_lsp_capabilities()
-
-for _, server in ipairs({
-  -- "angular",
-  "bash",
-  "clangd",
-  "docker",
-  "efm",
-  "eslint",
-  "go",
-  "intelephense",
-  "pyright",
-  "jedi",
-  "lua",
-  "rust",
-  "typescript",
-  "svelte",
-  "vimls",
-  "nil-ls",
-  "csharp",
-  -- "oxlint",
-  "biome",
-}) do
-  require("configs.lsp." .. server).setup(on_attach, capabilities)
+for server, config in pairs(require("configs.lsp.servers")) do
+  vim.lsp.config(server, config)
+  vim.lsp.enable(server)
 end
