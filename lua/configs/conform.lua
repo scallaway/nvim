@@ -15,18 +15,22 @@ conform.setup({
       "eslint-lsp",
     },
     javascript = {
+      "biome-organize-imports",
       "prettierd",
       "eslint-lsp",
     },
     typescript = {
+      "biome-organize-imports",
       "prettierd",
       "eslint-lsp",
     },
     javascriptreact = {
+      "biome-organize-imports",
       "prettierd",
       "eslint-lsp",
     },
     typescriptreact = {
+      "biome-organize-imports",
       "prettierd",
       "eslint-lsp",
     },
