@@ -54,17 +54,7 @@ local configs = {
     },
   },
   ["nix_ls"] = {},
-  ["pyright"] = {
-    root_dir = function(fname)
-      return utils.root_pattern(
-        ".git",
-        "setup.py",
-        "setup.cfg",
-        "pyproject.toml",
-        "requirements.txt"
-      )(fname) or utils.path.dirname(fname)
-    end,
-  },
+  ["pyright"] = {},
   ["rust"] = {},
   ["svelte"] = {},
   ["ts_ls"] = {},
