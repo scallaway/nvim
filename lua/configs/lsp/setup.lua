@@ -29,6 +29,21 @@ vim.keymap.set("n", "gd", vim.lsp.buf.definition)
 vim.keymap.set("n", "gr", vim.lsp.buf.references)
 vim.keymap.set("n", "<Leader>a", vim.diagnostic.open_float)
 
+vim.api.nvim_create_autocmd("LspAttach", {
+  group = vim.api.nvim_create_augroup("UserLspConfig", {}),
+  callback = function(args)
+    local client = vim.lsp.get_client_by_id(args.data.client_id)
+    if not client then
+      return
+    end
+
+    if client.name == "jedi_language_server" then
+      client.server_capabilities.definitionProvider = false
+      client.server_capabilities.hoverProvider = false
+    end
+  end,
+})
+
 for server, config in pairs(require("configs.lsp.servers")) do
   vim.lsp.config(server, config)
   vim.lsp.enable(server)

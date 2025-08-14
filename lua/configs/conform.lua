@@ -5,34 +5,25 @@ end
 
 conform.setup({
   formatters_by_ft = {
-    ["*"] = { "codespell" },
-    ["_"] = { "trim_whitespace" },
+    ["*"] = { "trim_whitespace" },
     lua = { "stylua" },
-    python = { "ruff_format" },
     rust = { "rustfmt" },
     svelte = {
+      "eslint_d",
       "prettierd",
-      "eslint-lsp",
     },
+    python = { "ruff_format" },
     javascript = {
-      "biome-organize-imports",
-      "prettierd",
-      "eslint-lsp",
+      "biome",
     },
     typescript = {
-      "biome-organize-imports",
-      "prettierd",
-      "eslint-lsp",
+      "biome",
     },
     javascriptreact = {
-      "biome-organize-imports",
-      "prettierd",
-      "eslint-lsp",
+      "biome",
     },
     typescriptreact = {
-      "biome-organize-imports",
-      "prettierd",
-      "eslint-lsp",
+      "biome",
     },
     html = {
       "prettierd",
@@ -45,11 +36,9 @@ conform.setup({
     },
   },
   notify_on_error = true,
-})
-
-vim.api.nvim_create_autocmd("BufWritePre", {
-  pattern = "*",
-  callback = function(args)
-    require("conform").format({ bufnr = args.buf })
-  end,
+  format_on_save = {
+    -- I recommend these options. See :help conform.format for details.
+    lsp_format = "fallback",
+    timeout_ms = 2000,
+  },
 })

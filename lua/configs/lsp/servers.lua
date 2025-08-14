@@ -1,10 +1,10 @@
-local utils = require("utils")
-
 local configs = {
   ["angularls"] = {},
+  ["asm_lsp"] = {},
   ["bashls"] = {},
   ["biome"] = {},
   ["clangd"] = {},
+  ["copilot"] = {},
   ["csharp_ls"] = {},
   ["dockerls"] = {},
   ["efm"] = {
@@ -17,30 +17,15 @@ local configs = {
         },
 
         python = {
-          require("efmls-configs.linters.flake8"),
+          require("efmls-configs.linters.ruff"),
         },
       },
     },
   },
-  ["eslint"] = {
-    settings = {
-      experimental = {
-        useFlatConfig = false,
-      },
-    },
-  },
+  -- ["eslint"] = {},
   ["gopls"] = {},
   ["intelephense"] = {},
-  ["jedi_language_server"] = {
-    init_options = {
-      diagnostics = {
-        enable = true,
-      },
-      hover = {
-        enable = true,
-      },
-    },
-  },
+  ["jedi_language_server"] = {},
   ["lua_ls"] = {
     settings = {
       Lua = {
@@ -59,6 +44,7 @@ local configs = {
   ["svelte"] = {},
   ["ts_ls"] = {},
   ["vimls"] = {},
+  ["zls"] = {},
 }
 
 return configs

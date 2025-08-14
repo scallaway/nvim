@@ -9,7 +9,7 @@ mason_lspconfig.setup({
     "ts_ls",
     "pyright",
     "rust_analyzer",
-    -- "prettier",
+    "biome",
     "eslint",
     "efm",
     -- "stylua",
