@@ -13,16 +13,16 @@ Requirements:
 
   - Tested and working as of:
 
-      NVIM v0.11.0-dev-1834+g56fabcadb6
+      NVIM v0.12.0-dev-1011+g38986188ba
 
 ---
 
 Lazy.nvim profile output:
 
-  Startuptime: 74.12ms
+  Startuptime: 76.07ms
 
   Based on the actual CPU time of the Neovim process till UIEnter.
   This is more accurate than `nvim --startuptime`.
-    LazyStart 3.69ms
-    LazyDone  59.48ms (+55.8ms)
-    UIEnter   74.12ms (+14.63ms)
+    LazyStart 4.19ms
+    LazyDone  69.57ms (+65.39ms)
+    UIEnter   76.07ms (+6.5ms)
