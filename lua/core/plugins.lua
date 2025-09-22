@@ -239,17 +239,6 @@ local plugins = {
   },
   "kevinhwang91/nvim-bqf",
   "tpope/vim-abolish",
-
-  -- Learning
-  {
-    "m4xshen/hardtime.nvim",
-    lazy = false,
-    dependencies = { "MunifTanjim/nui.nvim" },
-    config = function()
-      require("configs.hardtime")
-    end,
-  },
-  "tris203/precognition.nvim",
 }
 
 -- Add any work-related plugins that are required
