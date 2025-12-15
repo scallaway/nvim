@@ -34,19 +34,12 @@ local plugins = {
   -- Utils
   "nvim-lua/plenary.nvim",
   {
-    "sQVe/sort.nvim",
-    config = function()
-      require("configs.sort")
-    end,
-  },
-  {
     "stevearc/conform.nvim",
     opts = {},
     config = function()
       require("configs.conform")
     end,
   },
-  "gelguy/wilder.nvim",
 
   -- Language Server installer
   {
@@ -82,7 +75,6 @@ local plugins = {
     config = function()
       require("configs.blink-cmp")
     end,
-    dependencies = "rafamadriz/friendly-snippets",
     version = "*",
   },
   "echasnovski/mini.icons",
@@ -92,10 +84,6 @@ local plugins = {
       require("configs.copilot")
     end,
   },
-  {
-    "soulsam480/nvim-oxlint",
-    opts = {},
-  },
 
   -- Utils
   {
@@ -104,7 +92,6 @@ local plugins = {
   },
   {
     "kylechui/nvim-surround",
-
     config = function()
       require("configs.surround")
     end,
@@ -149,48 +136,21 @@ local plugins = {
     end,
   },
   {
-    "nvim-treesitter/nvim-treesitter-textobjects",
-    dependencies = { "nvim-treesitter/nvim-treesitter" },
-  },
-  {
-    "RRethy/nvim-treesitter-textsubjects",
-    dependencies = { "nvim-treesitter/nvim-treesitter" },
-  },
-  {
     "folke/todo-comments.nvim",
-
     config = function()
       require("configs.todo-comments")
     end,
   },
   {
     "numToStr/Comment.nvim",
-
     config = function()
       require("configs.comment")
     end,
   },
   {
-    "MeanderingProgrammer/markdown.nvim",
-
-    config = function()
-      require("configs.markdown")
-    end,
-    dependencies = { "nvim-treesitter/nvim-treesitter" },
-  },
-  {
     "folke/trouble.nvim",
     config = function()
       require("configs.trouble")
-    end,
-  },
-  {
-    "Sebastian-Nielsen/better-type-hover",
-    ft = { "typescript", "typescriptreact" },
-    config = function()
-      require("better-type-hover").setup({
-        openTypeDocKeymap = "<C-K>",
-      })
     end,
   },
 
@@ -230,15 +190,12 @@ local plugins = {
       "nvim-telescope/telescope.nvim",
     },
   },
-  "duane9/nvim-rg",
   {
     "nvim-pack/nvim-spectre",
     config = function()
       require("configs.spectre")
     end,
   },
-  "kevinhwang91/nvim-bqf",
-  "tpope/vim-abolish",
 }
 
 -- Add any work-related plugins that are required
