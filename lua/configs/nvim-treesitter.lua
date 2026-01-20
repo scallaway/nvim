@@ -12,7 +12,6 @@ treesitter.setup({
     "python",
     "rust",
     "typescript",
-    "org",
   },
   sync_install = false,
   auto_install = true,

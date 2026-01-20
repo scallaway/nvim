@@ -3,6 +3,7 @@ local configs = {
   ["asm_lsp"] = {},
   ["bashls"] = {},
   ["biome"] = {},
+  ["ccls"] = {},
   ["clangd"] = {},
   ["copilot"] = {},
   ["csharp_ls"] = {},
