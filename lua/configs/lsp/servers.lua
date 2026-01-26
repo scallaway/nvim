@@ -7,7 +7,8 @@ local configs = {
   ["clangd"] = {},
   ["copilot"] = {},
   ["csharp_ls"] = {},
-  ["dockerls"] = {},
+  ["docker_compose_langauge_service"] = {},
+  ["docker_language_server"] = {},
   ["efm"] = {
     filetypes = { "lua", "python" },
     settings = {
@@ -39,12 +40,13 @@ local configs = {
       },
     },
   },
+  ["mypy"] = {},
   ["nix_ls"] = {},
   ["pyright"] = {},
   ["rust"] = {},
   ["svelte"] = {},
-  ["ts_ls"] = {},
   ["vimls"] = {},
+  ["vtsls"] = {},
   ["zls"] = {},
 }
 

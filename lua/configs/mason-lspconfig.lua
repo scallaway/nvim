@@ -6,13 +6,13 @@ end
 mason_lspconfig.setup({
   ensure_installed = {
     "lua_ls",
-    "ts_ls",
     "pyright",
     "rust_analyzer",
     "biome",
     "eslint",
     "efm",
-    -- "stylua",
+    "stylua",
+    "vtsls",
   },
   automatic_installation = true,
 })
